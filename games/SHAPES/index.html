@@ -1,0 +1,614 @@
+<header>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<title>SHAPES</title>
+	<style>
+	
+ 		#btnClose{
+		width: 50px; height: 50px; position: fixed; color: white;
+	}
+	
+	</style>	
+	
+</header>
+<body>
+<a href="../../games.html" id="btnClose"><i class="material-icons" style="font-size: 4vw;margin-top:5%">exit_to_app</i></a>
+<br>
+
+<!-- <embed name="backmusic" src="backmusic.mp3" loop="true" hidden="true" autostart="true"> -->
+<div class="w3-quarter" style=" padding: 50px; align-items: center;text-color: lightcyan; " class="timer">
+		<center>
+		<h1 style="font-size: 3vw; color: white;">TIMER:</h1>
+		<h1 style="font-size: 7vw; color: lightcyan;" class="time">60</h1>
+		</center>
+</div>
+
+	
+
+<div class="w3-half" id="game" style="padding: 50px;" >
+		
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+		<div class="flip-container">
+			
+			<div class="flipper">
+				
+				<div class="front"></div>
+
+				<div class="back"></div>
+
+			</div>
+		</div>
+
+
+</div>
+
+	<div class="w3-quarter" style=" background-color:darkcyan; padding: 20px;margin-top: 5%; align-items: center"><h1 style="font-size:3vw">MATCHED SHAPES</h1><hr> <h2 class="found" style="font-size:2vw"></h2></div>
+
+</body>
+</head>
+
+ <style>
+ 	
+ 	body{
+ 		background-image: url("back.gif");
+ 		color: white;
+ 		font-family: arial;
+ 	}
+
+ 	
+
+
+ 	@media screen and (min-width: 37.4375em){
+
+ 		body header {
+ 			width: 600px;
+ 		}
+
+ 	}
+
+ 	body header .timer {
+ 		position: center;
+ 		top: 14%;
+ 		left: 3%;
+ 		font-size: 23px;
+ 		background: lightcyan;
+ 		width: 8vh;
+ 		height: 8vh;
+ 		line-height: 8vh;
+ 		border-radius: 4vh;
+ 		text-align: center;
+
+ 	}
+
+
+
+ 	#game{
+
+ 		height: 90vh;
+ 		width: 100%;
+ 		position: relative;
+ 		margin: 0 auto;
+ 	}
+
+ 	@media screen and (min-width: 37.4375em){
+
+ 		#game {
+ 			width: 600px;
+ 		}
+ 	}
+
+ 	.flip-container {
+
+ 		-webkit-perspective: 1000;
+ 		-moz-perspective: 1000;
+ 		perspective: 1000;
+ 		height: 20%;
+ 		margin: 1%;
+ 		cursor: pointer;
+ 	}
+
+ 	.flip-container.flip .flipper {
+
+ 		-webkit-transform: rotateY(180deg);
+ 		-moz-transform: rotateY(180deg);
+ 		-ms-transform: rotateY(180deg);
+ 		-o-transform: rotateY(180deg);
+ 		transform: rotateY(180deg);
+ 	}
+
+ 	.flip-container, .front, .back {
+
+ 		width: 23%;
+ 		float: left;
+ 		border-radius: 12px;
+ 	}
+
+ 	.flipper {
+
+ 		-webkit-transition: 0.6s;
+ 		-moz-transition: 0.6s;
+ 		transition: 0.6s;
+ 		-webkit-transform-style: preserve-3d;
+ 		-moz-transform-style: preserve-3d;
+ 		-ms-transform-style: preserve-3d;
+ 		-o-transform-style: preserve-3d;
+ 		transform-style: preserve-3d;
+ 		height: 100%;
+ 		position: relative;
+ 	}
+
+ 	.flipper .front, .flipper .back {
+
+ 		-webkit-backface-visibility: hidden;
+ 		backface-visibility: hidden;
+ 		-ms-backface-visibility: visible;
+ 		position: absolute;
+ 		top: 0;
+ 		left: 0;
+ 		height: 100%;
+ 		width: 100%;
+ 		box-shadow: lightcyan 0 8px 2px;
+ 	}
+
+ 	.flipper .front {
+
+ 		-webkit-transform: rotateY(0deg);
+ 		-moz-transform: rotateY(0deg);
+ 		-ms-transform: rotateY(0deg);
+ 		-o-transform: rotateY(0deg);
+ 		transform: rotateY(0deg);
+ 		background: darkcyan;
+ 	}
+
+ 	.flipper .back {
+
+ 		-webkit-transform: rotateY(180deg);
+ 		-moz-transform: rotateY(180deg);
+ 		-ms-transform: rotateY(180deg);
+ 		-o-transform: rotateY(180deg);
+ 		transform: rotateY(180deg);
+ 		border: 1px solid cyan;
+ 	}
+
+ 	#CIRCLE {
+
+ 		background: white url("circle.png") no-repeat center;
+ 		background-size: contain;
+
+ 	}
+
+ 	#SQUARE {
+
+ 		background: white url("square.png") no-repeat center;
+ 		background-size: contain;
+
+ 	}
+
+ 	#RECTANGLE {
+
+ 		background: white url("rectangle.png") no-repeat center;
+ 		background-size: contain;
+
+ 	}
+
+ 	#OVAL {
+
+ 		background: white url("oval.png") no-repeat center;
+ 		background-size: contain;
+
+ 	}
+
+ 	#PENTAGON{
+
+ 		background: white url("pentagon.png") no-repeat center;
+ 		background-size: contain;
+
+ 	}
+
+ 	#HEXAGON {
+
+ 		background: white url("hexagon.png") no-repeat center;
+ 		background-size: contain;
+
+ 	}
+
+ 	#TRIANGLE {
+
+ 		background: white url("triangle.png") no-repeat center;
+ 		background-size: contain;
+
+ 	}
+
+ 	#RHOMBUS {
+
+ 		background: white url("rhombus.png") no-repeat center;
+ 		background-size: contain;
+
+ 	}
+
+
+ </style>
+
+<!--  <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script> -->
+
+<!--  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script> -->
+ <script src="jquery-3.5.1.min.js"></script>
+
+ <script>
+ 	window.console = window.console || function(t) {};
+ </script>
+
+
+ <script>
+ 	
+ 	if(document.location.search.match(/type=embed/gi)){
+
+ 		window.parent.postMessage("resize","*");
+ 	}
+ </script>
+
+
+ <script type="text/javascript">
+ 	
+ 	$(document).ready(function(){
+
+ 		if(navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+
+ 			$("#game").height( $(window).height() * 0.9);
+ 		}
+
+ 		var cards = ['CIRCLE', 'SQUARE', 'RECTANGLE','TRIANGLE', 'OVAL', 'PENTAGON', 'HEXAGON', 'RHOMBUS'];
+
+ 		var pairs = cards.concat(cards);
+
+ 		var chosenCards = [];
+ 		var cardsToFlip = [];
+ 		var gameStarted = false;
+ 		var running = false;
+ 		var outOfTime = false;
+ 		var countdownStarted = false;
+ 		var win = false;
+ 		var pairCount = 0;
+ 		var time = 60;
+
+ 		shuffleArray(pairs);
+
+ 		$('.back').each(function(i, element){
+
+ 			$(this).attr('id', pairs[i]);
+ 		});
+
+ 		$('.flip-container').click(function(){
+
+ 			if (!outOfTime) {
+
+ 				if (!gameStarted && !running) {
+
+ 					running = true;
+
+ 					$('.flip-container').each(function(){
+
+ 							$(this).toggleClass('flip');
+ 					});
+
+ 					setTimeout(function(){
+
+ 						$('.flip-container').each(function() {
+
+ 							$(this).toggleClass('flip');
+ 						});
+
+ 						gameStarted = true;
+ 						running = false;
+ 					}, 2000);
+ 				}
+
+ 				else if ($(this).find('.back').attr('id') == chosenCards[0] && chosenCards[1] == null && $(this).hasClass('flip') && !running){
+
+ 					running = true;
+
+ 					chosenCards[0] = null;
+
+
+ 					$(this).toggleClass('flip');
+ 					running = false;
+
+
+ 				}
+
+ 				else if($(this).hasClass('flip')){
+
+ 					return;
+ 				}
+
+ 				else if(chosenCards[0] == null && chosenCards[1] == null && !$(this).hasClass('flip') && !running){
+
+ 					if (!countdownStarted) {
+ 						countdown();
+ 					}
+
+ 					running = true;
+
+ 					chosenCards[0] = $(this).find('.back').attr('id');
+
+ 					$(this).toggleClass('flip');
+ 					running = false;
+ 				}
+
+ 				else if(chosenCards[0] != null && chosenCards[1] == null && !$(this).hasClass('flip') && !running){
+
+ 					running = true;
+
+ 					chosenCards[1] = $(this).find('.back').attr('id');
+
+ 					$(this).toggleClass('flip');
+
+ 					if (chosenCards[0] == chosenCards[1]) {
+
+
+ 						console.log(chosenCards[1]);
+ 						$('.found').append("<h5>" + chosenCards[1] +"</h5>");
+ 						chosenCards[0] = null;
+ 						chosenCards[1] = null;
+ 						pairCount++;
+
+ 						if (pairCount == cards.length) {
+
+ 							win = true;
+
+ 							alert("AMAZING!");
+ 						}
+
+ 						running = false;
+ 					}
+
+ 					else{
+
+ 						cardsToFlip[0] = chosenCards[0];
+ 						cardsToFlip[1] = chosenCards[1];
+ 						chosenCards[0] = null;
+ 						chosenCards[1] = null;
+
+ 						setTimeout(function(){
+
+ 							$('*[id*=' + cardsToFlip[0] + ']').each(function() {
+
+ 								$(this).closest('.flip').toggleClass('flip');
+ 							});
+
+ 							$('*[id*=' + cardsToFlip[1] + ']').each(function() {
+
+ 								$(this).closest('.flip').toggleClass('flip');
+ 							});
+
+ 							running = false;
+
+ 						}, 800);
+
+ 					}
+ 				}
+ 			} else {
+
+ 				alert("YOU HAVE RUN OUT OF TIME! HEHE");
+ 			};
+
+ 		});
+
+ 		function shuffleArray(array) {
+
+ 			for (var i = array.length - 1; i > 0; i--){
+
+ 				var j = Math.floor(Math.random() * (i + 1));
+
+ 				var temp = array[i];
+ 				array[i] = array[j];
+ 				array[j] = temp;
+ 			}
+
+ 			return array;
+
+ 		}
+
+ 		function countdown() {
+
+ 			countdownStarted = true;
+ 			var timeStart = +new Date;
+ 			var timer = setInterval( function(){
+
+ 				var timeNow = +new Date;
+ 				var difference = ( timeNow - timeStart ) /1000;
+
+ 				if(time > 0 && !win){
+
+ 					time = 60;
+
+ 				time = Math.floor( time -difference );
+
+ 				$('.time').text( time );
+
+ 			} else if(win) {
+
+ 				clearInterval(timer);
+
+ 			} else {
+ 				outOfTime = true;
+
+ 				alert("YOU HAVE RUN OUT OF TIME! HEHE");
+
+ 				clearInterval(timer);
+ 			}
+ 			}, 250);
+ 		};
+
+
+
+ 	});
+
+ </script>

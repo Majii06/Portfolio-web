@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>POUR</title>
+
+	<link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css"> 
+	
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	 <script src="bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+
+
+	 <style type="text/css">
+	
+
+	 	 .container{
+	 	 
+	 	 	
+	 	 	width:80%;
+	 	 	margin: auto;
+	 	 	display: block;
+	 	 	background-color: #037c6e;
+			box-shadow: 10px 10px 10px 13px black;
+
+	 	 }
+	 	 h1{
+	 	 	margin-left: 5%;
+	 	 }
+	 	 table{
+
+			display: inline-table;
+	 	 	bottom: 0;
+	 	 	margin: 3%;
+	 	 	width: 14%;
+	 	 	
+	 	 }
+
+	 	tr{
+	 		height: 8vw;
+	 		
+	 	}
+	 	body{
+	 		background-color: #025043;
+	 	}
+
+	 	#introModal{
+	 		display: none;
+	 		position: fixed;
+	 		z-index: 1;
+	 		left: 0;
+	 		top: 0;
+	 		width: 100%;
+	 		height: 100%;
+	 	}
+
+	 	#content{
+
+	 		background-color: #a5cabb;
+	 		margin-top: 15%;
+	 		margin-bottom: 25%;
+	 		margin-left: 20%;
+	 		margin-right: 20%;
+	 		padding: 20px;
+	 		width: 60%;
+	 		color: black;
+	 		text-align: CENTER;
+	 		box-shadow:10px 10px 10px 10px black;
+
+
+	 	}
+
+	 	#wonModal{
+	 		display: none;
+	 		position: fixed;
+	 		z-index: 1;
+	 		padding-top: 8%;
+	 		left: 0;
+	 		top: 0;
+	 		width: 100%;
+	 		height: 100%;
+	 		overflow: auto;
+	 	}
+
+	 	#woncontent{
+
+	 		background-color: #a5cabb;
+	 		margin: auto;
+	 		padding: 20px;
+	 		width: 40%;
+	 		color: black;
+	 		text-align: CENTER;
+	 		box-shadow:10px 10px 10px 10px black;
+
+
+	 	}
+
+	 	#settingModal{
+	 		display: none;
+	 		position: fixed;
+	 		z-index: 1;
+	 		padding-top: 8%;
+	 		left: 0;
+	 		top: 0;
+	 		width: 100%;
+	 		height: 100%;
+	 		overflow: auto;
+	 	}
+
+	 	#settingContent{
+
+	 		background-color: #a5cabb;
+	 		margin: auto;
+	 		padding: 20px;
+	 		width: 40%;
+	 		color: black;
+	 		text-align: CENTER;
+	 		box-shadow:10px 10px 10px 10px black;
+
+
+	 	}
+
+	 	button{
+	 		margin:2%;
+	 		width: 40%;
+	 		background-color: #025043;
+	 		border-radius: 4px;
+	 		box-shadow: 3px 3px 3px 3px black;
+	 		color: white;
+	 		font-size: .8vw;
+	 		touch-action: manipulation;
+			text-align: center;
+	 	}
+	 	button:focus{
+	 		text-decoration: none;
+	 	}
+	 	button:hover{
+	 		text-decoration: none;
+	 		color: lightgreen;
+	 		box-shadow: 10px 10px 10px 10px lightgreen;
+	 	}
+	 	button:active{
+
+	 	}
+	 	#restart{
+/*	 		width: 80px;
+	 		height: 80px;
+	 		border-radius: 50%;
+	 		background-color: red;
+	 		border: 10px solid black;*/
+	 		font-size: 7vw;
+	 		color:gray;
+	 		left: 93%;
+	 		top: 3%;
+	 		position: fixed;
+	 		display: none;
+	 	}
+	 	#restart: focus{
+	 		text-decoration: none;
+	 	}
+	 	#restart:hover{
+	 		text-decoration: none;
+	 		color: lightgreen;
+	 	}
+		#btnClose{
+		width: 1.8vw; height: 1.8vw; background-color: adopt;color: white;
+	}
+
+	#div{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+
+		
+	}
+	 </style>
+	
+	 	
+
+
+
+	</head>
+
+<body>
+	<br>
+	<a href="../../games.html" id="btnClose"><i class="material-icons" style="font-size: 4vw;">exit_to_app</i></a>
+	<h1 style=" font-family: fantasy; font-size: 5vw; color: #a5cabb;"> POURING COLOR GAME</h1>
+
+	<!-- <button id="restart" onclick="btnQuit()"> <h6> QUIT </h6> </button> -->
+	<i class="fa fa-gear fa-spin" id="restart" onclick="btnSetting()"></i>
+
+	<div id="div">
+		<div class="container" id="container">
+		</div>
+	</div>
+
+
+	<div class="modal" id="introModal">
+		
+		<div class="modal-content" id="content">
+
+			
+			<!-- <span class="close" style="float: right;">&times;</span> -->
+			<br>
+			<h1 style="text-align: CENTER; font-weight: bold;font-family: fantasy;font-size: 3vw;"> POURING COLOR GAME</h1>
+			<h5 style="font-size: 1.8vw;">PICK A LEVEL</h5>
+
+			<div>
+			<button onclick="btnEasy()"><h1 style="font-size: 2vw;">&#128564;</h1><h5 style="font-size:0.8vw;">EASY</h5></button>
+			<button onclick="btnMedium()"><h1 style="font-size: 2vw;">&#128526;</h1><h5 style="font-size:0.8vw;">MEDIUM</h5></button>
+			<button onclick="btnHard()"><h1 style="font-size: 2vw;">&#128520;</h1><h5 style="font-size:0.8vw;">HARD</h5></button>
+
+			</div>
+			<br>		
+		</div>
+
+	</div>
+
+	<div class="modal" id="wonModal">
+		
+		<div class="modal-content" id="woncontent">
+			<br>
+			<!-- <span class="close" style="float: right;">&times;</span> -->
+			<br>
+			<h1 style="text-align: CENTER;    font-weight: bold;font-family: fantasy; font-size: 3vw;"> CONGRATULATIONS!</h1><HR>
+			<h5 style="font-size: 1.8vw;">You slayed it! Wanna play again?</h5><br>
+
+			<div>
+			<button onclick="playAgain()" style="width: 50%;"> <h5 style="font-size: 1.5vw;">PLAY AGAIN</h5> </button>
+			</div>
+			<br>		
+		</div>
+
+	</div>
+
+	<div class="modal" id="settingModal">
+		
+		<div class="modal-content" id="settingContent">
+			<button style = "color:white; margin-left:90%; width: 1.5vw; border-radius: 10%; border-color: white; background-color:adopt; text-align: center" onclick="btnClose()">X</button>
+			<h1 style="text-align: CENTER; font-family: fantasy; font-size: 3vw;font-weight: bold;"><i class="fa fa-gear fa-spin" style="font-size: 2vw;"></i> Settings</h1><br>
+			<div>
+				<button id="btnMusic" onclick="btnMusic()"><i id="music" class="fa fa-volume-up" style="font-size:1.8vw"></i><H5 style="font-size: 1.5vw;">Music</H5></button>
+				<button id="btnSounds" onclick="btnSounds()"> <i id="sounds" class="fa fa-music" style="font-size:1.8vw"></i><H5 style="font-size: 1.5vw;">Sounds</H5></button>
+
+				<br><br>
+			<button onclick="btnQuit()" style="width: 50%; background-color: red;"><h5 style="font-size: 1.8vw;">QUIT</h5> </button>
+			</div>
+			<br>		
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+			
+			var container = document.getElementById('container');
+			var randomColor = ['red','blue','black','orange','violet','pink','green'];
+			var colors = ['#9D2EB0','#9B62E5','#84F5D5','#F354A9','#463F9E','#FF9535','#4BFF36'];
+			var colorsContainer =[];
+			var boxes = 0;
+			var move = "";
+			var pickedTable;
+			var correct = new Audio('correct.mp3');
+			var incorrect = new Audio('incorrect.mp3');
+			var finished = new Audio('finished.mp3')	
+			var lose = new Audio('lose.mp3');
+			var introModal = document.getElementById('introModal');
+			var setting  = document.getElementById('settingModal');
+			var wonModal = document.getElementById('wonModal');
+			var restart = document.getElementById('restart');
+			var muteMusic = document.getElementById('music');
+			var muteSounds = document.getElementById('sounds');
+			var startMusic = new Audio('music1.mp3');
+
+			introModal.style.display = "block";
+			
+		
+		function btnClose(){
+			setting.style.display = "none"
+		}
+
+		function checkSoundsC(){
+			 if(muteSounds.className == "fa fa-music"){
+			 	 correct.play();
+			 }
+		}
+		
+		function checkSoundsI(){
+			 if(muteSounds.className == "fa fa-music"){
+			 	   incorrect.play();
+			 }
+		}
+	
+			//empty box	
+			function emptyBox(){
+
+				for(var j =0; j<=1; j++){
+					var bottle = document.createElement("table");
+
+					for(var i = 0; i <= 4; i++){
+						var tr = document.createElement("tr");
+						var td = document.createElement("td");
+						td.style.backgroundColor = "white";
+						tr.appendChild(td);
+
+						bottle.appendChild(tr);
+					}
+
+					let tds = bottle.getElementsByTagName('td')
+					let lasttd = tds[tds.length-1];
+					lasttd.style.borderBottomRightRadius = '20px';
+					lasttd.style.borderBottomLeftRadius = '20px';
+					let firsttd = tds[0];
+					firsttd.style.borderTop = '8px solid darkgray';
+					container.appendChild(bottle);
+
+				}
+
+			}
+
+			//boxes with colors
+			function createBottles(){
+				// done.play();
+				for(var bottles = 0; bottles < boxes; bottles++){
+
+						var bottle = document.createElement("table");
+					
+							for(var i = 0; i <= 4; i++){
+								var tr = document.createElement("tr");
+								var td = document.createElement("td");
+
+
+								var selectedColor = "";
+								var checks;
+								do{
+									selectedColor = Math.floor(Math.random()*boxes);
+									checks = countColors(colors[selectedColor]);
+								}while(checks == 5)
+
+								colorsContainer.push(colors[selectedColor]);
+								td.style.backgroundColor = colors[selectedColor];
+								tr.appendChild(td);
+								bottle.appendChild(tr);
+
+								
+							}
+					//add designs every bottle
+					let tds = bottle.getElementsByTagName('td')
+					let lasttd = tds[tds.length-1]
+					lasttd.style.borderBottomRightRadius = '20px';
+					lasttd.style.borderBottomLeftRadius = '20px';
+					let firsttd = tds[0];
+					firsttd.style.borderTop = '8px solid darkgray';
+
+					//add boxes/bottles to container
+					container.appendChild(bottle);
+
+
+
+				}
+
+	const tableElements = document.querySelectorAll("table");
+	var color = ""; 
+	var empty="";
+			tableElements.forEach(function(table){
+				table.addEventListener("click",function(){
+
+			if(color != "" && color != "white"){
+				console.log(color);
+				// table.style.border = "solid";
+				
+				var num = 5;
+				var selectedRow;
+				var selectedTd;
+				var nselectedRow;
+				var nselectedTd;
+				var deduct = 0;
+
+				do{
+					num--;
+					deduct++;
+					selectedRow = table.rows[num];
+					selectedTd = selectedRow.cells[0];
+					empty = selectedTd.style.backgroundColor;
+					
+				}while(empty != "white")
+
+					if(num == 4){
+						checkSoundsC();
+						selectedTd.style.backgroundColor = color;
+						color ="";
+						empty ="";
+						num = 5;
+						deduct = 0;
+						tds = [];
+						checkBoxes();
+					}
+
+					else if(num <=3 ){
+						deduct-=1;
+					 	tds = table.getElementsByTagName('td');
+					 	prvsTd = tds[tds.length - deduct]; 
+
+						if( prvsTd.style.backgroundColor == color){
+							
+							checkSoundsC();
+							selectedTd.style.backgroundColor = color;
+							color ="";
+							empty ="";
+							num = 5;
+							deduct = 0;
+							tds = [];
+							checkBoxes();
+
+						}
+						else{
+							// console.log("wrong!");
+							checkSoundsI();
+							pickedTable.style.backgroundColor = color;
+							color ="";
+							empty ="";
+							num = 5;
+							deduct = 0;
+							tds = [];
+							checkBoxes();
+
+						}
+
+					
+					}
+			}
+
+			else{
+				var newColor ="";
+				var nums = 0;
+				do{
+					nselectedRow = table.rows[nums];
+					nselectedTd = nselectedRow.cells[0];
+					newColor = nselectedTd.style.backgroundColor;
+					nums++;
+				}while(newColor == "white")
+
+					color = newColor;
+					// console.log(color)
+					pickedTable = nselectedTd;
+ 					nselectedTd.style.backgroundColor ="white";
+
+
+
+			}
+				
+				});
+			});
+
+			}
+
+
+	function btnMedium(){
+		startMusic.play();
+		introModal.style.display = "none";
+		restart.style.display = "block";
+		boxes = 5;
+		emptyBox();
+		createBottles();
+		
+	}
+
+	function btnEasy(){
+		startMusic.play();
+		console.log("easy");
+		introModal.style.display = "none";
+		restart.style.display = "block";
+		boxes = 3;
+		emptyBox();
+		createBottles();
+	}
+
+	function btnHard(){
+		startMusic.play();
+		introModal.style.display = "none";
+		restart.style.display = "block";
+		boxes = 7;
+		emptyBox();
+		createBottles();
+	}
+
+	
+
+
+	//check if the color is reached the numbers of color 
+	function countColors(color){
+		var count = 0;
+		colorsContainer.forEach(item=>{
+			if (item == color) {
+				count++;
+			}
+		});
+
+		return count;
+
+		
+	}
+
+
+	//boxes selections
+	
+	function checkBoxes(){
+
+			const newtableElements = document.querySelectorAll("table");
+			let allCount=0;
+			let count = 0;
+			let color="";
+			let checkColor = '';
+			newtableElements.forEach(table=>{
+
+				let tdata = table.getElementsByTagName('td');
+				
+				for(let i = 0; i <= 4; i++){
+					nColor = tdata[0];
+					color = nColor.style.backgroundColor;
+					wColor = tdata[i];
+					checkColor = wColor.style.backgroundColor;
+
+					if(color == checkColor){
+						count++;
+						console.log(count);					
+					}
+					else{
+						count = 0;
+						break;
+					} 
+
+
+
+				}
+
+			});
+
+		allCount = (boxes*5) + 10;
+		if(count == allCount){
+			startMusic.pause();
+			finished.play();
+			wonModal.style.display ="block";
+		}
+
+		
+	}
+
+
+
+	function playAgain(){
+			
+			startMusic.play();
+			restart.style.display = "none";
+			wonModal.style.display ="none";
+			introModal.style.display = "block";
+			colorsContainer =[];
+			boxes = 0;
+			move = "";
+			pickedTable;
+			color = ""; 
+			empty="";
+		while(container.hasChildNodes()){
+				container.removeChild(container.firstChild);
+		}
+	}
+
+	function btnQuit(){
+			startMusic.pause();
+			lose.play();
+		 muteMusic.className = "fa fa-volume-up";
+		 muteSounds.className = "fa fa-music";
+			restart.style.display = "none";
+			setting.style.display = "none";
+			introModal.style.display = "block";
+
+			colorsContainer =[];
+			boxes = 0;
+			move = "";
+			pickedTable;
+			color = ""; 
+			empty="";
+		while(container.hasChildNodes()){
+				container.removeChild(container.firstChild);
+		}
+
+
+	}
+
+	function btnSetting(){
+		setting.style.display = "block";
+	}
+
+	function btnMusic(){
+
+		if(muteMusic.className == 'fa fa-volume-off'){
+			muteMusic.className = 'fa fa-volume-up';
+			startMusic.play();
+		}
+		else{
+			muteMusic.className = 'fa fa-volume-off';
+			startMusic.pause();
+		}
+		
+		muteMusic.style.fontSize = '1.8vw';
+	}
+
+	function btnSounds(){
+
+		if(muteSounds.className == 'fa fa-remove'){
+			muteSounds.className = 'fa fa-music';
+			correct.play();
+		}
+		else{
+			muteSounds.className = 'fa fa-remove';
+		}
+		
+		muteSounds.style.fontSize = '1.8vw';
+	}
+		
+		
+
+	
+
+
+
+
+	//no more move function
+	// function noMoves(){
+
+	// 	tableElements.forEach(table=>{
+
+	// 		let tdata = table.getElementsByTagName('td');
+
+	// 		for(let i = 0; i <=4 ; i++){
+
+	// 			nColor = tdata[0];
+	// 			color = nColor.style.backgroundColor;
+	// 			wColor = tdata[i];
+	// 			checkColor = wColor.style.backgroundColor;
+	// 		}
+
+
+
+	// 	})
+
+	// }
+
+
+
+	</script>
+	
+</body>
+
+</html>

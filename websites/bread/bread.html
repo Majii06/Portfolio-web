@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" >
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LA LUNE FRENCH BISTRO </title>
+
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+ 
+ 
+ 
+  <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+  
+  <style>
+  
+    .animated {
+  visibility: visible;
+  animation-fill-mode: both;
+  animation-duration: 2s;
+  animation-play-state: running;
+}
+  
+    @keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+  
+   .animated.bounceIn {
+  animation-name: bounceIn;
+}
+  
+  .animatable {
+  /* initially hide animatable objects */
+  visibility: hidden;
+
+  /* initially pause animatable objects their animations */
+  animation-play-state: paused;
+}
+    @keyframes moveUp {
+  0% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.animated.moveUp {
+  animation-name: moveUp;
+}
+    @keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+  60% {
+    transform: translateX(20px);
+  }
+  80% {
+    transform: translateX(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+  .animated.bounceInLeft {
+  animation-name: bounceInLeft;
+}
+  
+  body{
+    
+   
+    width: 100%;
+    height:100%;
+  }
+  
+  .top-header{
+    font-family: solway;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-top:-1%;
+    font-size: 3vw;
+  } 
+  
+  
+  .website-tittle{
+    
+    font-size: 8vw;
+    text-align: center;
+    color: white;
+    font-family: hammersmith One;
+    font-weight: bold;
+    margin-top: 15%;   
+  }
+    
+  .dineBtn{
+    align-items: center;
+    margin-top: 15%;
+    
+  }
+    
+    .intro{
+      align-items: center;
+      background-image: url("images/Background.gif");
+    background-size: cover;
+    width: 100%;
+    height:100%;
+     padding: 10%;
+      
+    }
+  #works{
+    background-color: #f5f5ef;
+    height: 100%;
+    font-family: hammersmith One;
+    font-weight: bold;
+    align-items: center;
+    
+  }
+  
+   #about{
+    background-color: white;
+    height: 100%;
+    font-family: hammersmith One;
+    font-weight: bold;
+     padding: 5%;
+     width: 100%;
+    
+   }   
+  #comment{
+    background-color: #f5f5ef;
+    height: 550px;
+    font-family: hammersmith One;
+    font-weight: bold;
+    padding: 5%;
+    width: 100%;
+    
+   }   
+  #contacts{
+    background-color: black;
+    height: 500px;
+    font-family: hammersmith One;
+    font-weight: bold;
+    padding: 5%;
+    text-color: white;
+    width: 100%;
+    
+   }   
+  
+   .history{
+     width: 100%;
+     height: 100%;
+     padding: 10%;
+     align-items: center;
+     
+   } 
+    .history-text{
+      
+      float: left;
+      width: 50%;
+      font-family: hammersmith One;
+      float: right;
+      
+      
+    }
+  
+  .btnMenu{
+    background-color: black;
+    color: white;
+    margin-top:5%;
+    text-color: white;
+    
+  }
+  
+.filterDiv {
+  float: left;
+  color: #ffffff;
+  width: 30%;
+  line-height: 3%;
+  padding: 1%;
+  text-align: center;
+  text-color: black;
+  display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: transparent;
+  cursor: pointer;
+  width: 90%;
+  border-bottom: 1px solid black;
+  
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+    
+  #myBtnContainer{
+    width: 30%;
+   float: left;
+  }
+    
+  .container {
+    width: 60%;
+    height: 600px;
+     font-family: hammersmith One;
+    font-weight: bold;
+    overflow-y: scroll;
+    float: right;
+    margin-top: 5%;
+}
+    .toplove{
+      color: black;
+      font-family: solway;
+      margin-top: 3%;
+      text-align: center;
+      font-weight: bold;
+    }
+      
+  h4,h5{
+    font-family: solway;
+    font-weight: bold;
+  }
+      
+  </style>
+
+</head>
+
+
+<body id="top">
+
+    <div id="page" class="s-pagewrap">
+
+  <div class="intro"> 
+
+    <h3 class = "top-header animatable moveUp">LA LUNE FRENCH BISTRO </h3>
+    <div class="website-tittle animatable moveUp" >A TASTE OF PARIS</div>
+  
+    <center> <a class="smoothscroll" href="#works" style="color: gray" ><button class="dineBtn animatable moveUp"">Dine with us</button></a></center>
+    
+  </div>
+  
+    <section id="works" class="target-section">
+
+            <div class="history animatable bounceIn">
+              <img src="images/history.jpg" style="float: left; width: 30%;">
+              
+              <div class="history-text">
+                 
+                <p style="font-family: hammersmith One;font-weight: bold; font-size: 3.5vw">A FRENCH FLING</p><br>
+                
+                <p style=" font-family:solway; color: gray; font-size:1.5vw; line-height: 1.8; text-indent: 30px; text-align: justify">La Lune French Bistro was born from a love of all things Paris. Our founder and chef Ingrid Correa spent three amazing years in the City of Love, training under the industry's best. She brought home everything she learned - the flavors, the feelings, the family-style cafe - so that you can get a taste of Paris, too.</p>
+              
+                <a class="smoothscroll" href="#about" style="color: white"><button class="btnMenu"> Check Menu </button></a>
+            </div> <!-- folio entries -->
+
+
+     </section> <!-- end s-works --> 
+      
+      
+      <section id="about">
+
+       
+        <div id="myBtnContainer">
+          <h2 style="font-family: hammersmith One;font-weight: bold; font-size:2.5vw; " class="animatable moveUp">FRENCH FLAVORS</h2>
+         <p style="color: gray;font-size:1.5vw; font-weight: normal;" class="animatable moveUp">     Paris is a melting pot, as our food can attest. Take a bite and savor la vie délicieuse!</p> 
+  																					<button class="btn active" onclick="filterSelection('all')" style="font-size: 1.3vw; font-family:solway;"> ALL FLAVORS</button>
+ 																					 <button class="btn" onclick="filterSelection('appetizers')" style="font-size: 1.3vw; font-family:solway;"> LOVELY APPETIZERS</button>
+																					  <button class="btn" onclick="filterSelection('mains')" style="font-size: 1.3vw; font-family:solway;"> WHOLESOME MAINS</button>
+ 																				 <button class="btn" onclick="filterSelection('endings')" style="font-size: 1.3vw; font-family:solway;"> SWEET ENDINGS</button><br><br><br>
+            <a class="smoothscroll" href="#contacts" style="color: white; font-family:solway; "><button style="background-color: black; width: 100%;color: white;padding: 2%;" > ORDER NOW </button></a>
+																				</div>
+      
+	
+<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+<div class="container animatable bounceInLeft">
+  <div class="filterDiv appetizers" style="font-size:1vw">
+    							<img src="images/appetizers1.jpg" width="300" height="300">
+    							<p style="color: gray; font-family:solway; float: left" > La Boule </p>
+																<p style="color: gray; font-family:solway; float: right" >₱120 </p>
+  </div>
+  <div class="filterDiv appetizers mains" style="font-size:1vw"> 
+    <img src="images/appetizers2.jpg" width="300" height="300"> 
+        							<p style="color: gray; font-family:solway; float: left" > Le Pain  </p>
+																<p style="color: gray; font-family:solway; float: right" >₱130 </p>
+  </div>
+  <div class="filterDiv appetizers" style="font-size:1vw">
+    <img src="images/appetizers3.jpg" width="300" height="300">    				
+    <p style="color: gray; font-family:solway; float: left" > La Bague</p>
+																<p style="color: gray; font-family:solway; float: right" >₱105 </p></div>
+  <div class="filterDiv mains" style="font-size:1vw">
+    <img src="images/mains1.jpg" width="300" height="300">    							
+    <p style="color: gray; font-family:solway; float: left" > Le Comple</p>
+																<p style="color: gray; font-family:solway; float: right" >₱125 </p></div>
+  <div class="filterDiv appetizers" style="font-size:1vw">
+    <img src="images/appetizers4.jpg" width="300" height="300">    						
+    <p style="color: gray; font-family:solway; float: left" > Le Bâtard</p>
+																<p style="color: gray; font-family:solway; float: right" >₱110</p></div>
+  <div class="filterDiv mains" style="font-size:1vw">
+    <img src="images/mains2.jpg" width="300" height="300">    		
+    <p style="color: gray; font-family:solway; float: left" > La Ficelle</p>
+																<p style="color: gray; font-family:solway; float: right" >₱120 </p></div>
+  <div class="filterDiv appetizers" style="font-size:1vw">
+    <img src="images/appetizers5.jpg" width="300" height="300">    	
+    <p style="color: gray; font-family:solway; float: left" > La Flute </p>
+																<p style="color: gray; font-family:solway; float: right" >₱160</p></div>
+  <div class="filterDiv mains" style="font-size:1vw">
+    <img src="images/mains3.jpg" width="300" height="300">    						
+    <p style="color: gray; font-family:solway; float: left" > Torsade </p>
+																<p style="color: gray; font-family:solway; float: right" >₱150 </p></div>
+  <div class="filterDiv endings" style="font-size:1vw">
+    <img src="images/endings1.jpg" width="300" height="300">    				
+    <p style="color: gray; font-family:solway; float: left" > L’Epi </p>
+																<p style="color: gray; font-family:solway; float: right" >₱180 </p></div>
+  <div class="filterDiv endings" style="font-size:1vw">
+    <img src="images/endings2.jpg" width="300" height="300">    							
+    <p style="color: gray; font-family:solway; float: left" > Laux lard </p>
+																<p style="color: gray; font-family:solway; float: right" >₱157 </p></div>
+  <div class="filterDiv endings" style="font-size:1vw">
+    <img src="images/endings3.jpg" width="300" height="300">    							
+    <p style="color: gray; font-family:solway; float: left" > Le Blé </p>
+																<p style="color: gray; font-family:solway; float: right" >₱190 </p></div>
+  <div class="filterDiv endings" style="font-size:1vw">  
+    <img src="images/endings4.jpg" width="300" height="300">    					
+    <p style="color: gray; font-family:solway; float: left" > L’Eau </p>
+																<p style="color: gray; font-family:solway; float: right" >₱180 </p></div>
+  <div class="filterDiv mains" style="font-size:1vw">
+    <img src="images/mains4.jpg" width="300" height="300">    			
+    <p style="color: gray; font-family:solway; float: left" > Le Sucre </p>
+																<p style="color: gray; font-family:solway; float: right" >₱170 </p></div>
+  
+  
+  <div class="filterDiv endings" style="font-size:1vw">
+    <img src="images/endings6.jpg" width="300" height="300">    							
+    <p style="color: gray; font-family:solway; float: left" > Le shite </p>
+																<p style="color: gray; font-family:solway; float: right" >₱190 </p></div>
+    <div class="filterDiv endings" style="font-size:1vw">
+      <img src="images/endings5.jpg" width="300" height="300">    							
+    <p style="color: gray; font-family:solway; float: left" > Le koite </p>
+																<p style="color: gray; font-family:solway; float: right" >₱180 </p></div>
+  <div class="filterDiv mains" style="font-size:1vw">  
+    <img src="images/mains6.jpg" width="300" height="300">    					
+    <p style="color: gray; font-family:solway; float: left" > L’ruefa </p>
+																<p style="color: gray; font-family:solway; float: right" >₱180 </p></div>
+  <div class="filterDiv mains" style="font-size:1vw">
+    <img src="images/mains7.jpg" width="300" height="300">    			
+    <p style="color: gray; font-family:solway; float: left" > Le puerta </p>
+																<p style="color: gray; font-family:solway; float: right" >₱170 </p></div>
+</div>
+
+       </div>
+ </section> <!-- end s-works --> 
+      
+      
+ <section id="comment">
+
+            
+ 							<h2 class = "toplove animatable bounceIn" style="font-size:2.5vw">LOVE FOR LA LUNE  </h2>
+        
+        <div style="width: 25%; float: left;margin-left:5%;font-family: solway;" class="animatable bounceIn" >
+          
+          <h4 style="font-size:1.5vw">"TRANSPORTED TO PARIS</h4>
+          <p style="font-size:1.5vw; color: gray;font-weight: normal;">"One bite and I felt like I was back in France.The team have outdone themselves!"</p>
+            <p style="font-size:1.5vw">- Teddy, Entrepreneur</p>       
+        </div>
+        
+         <div style="width: 25%; float: left;margin-left:5%;font-family: solway;" class="animatable bounceIn">
+          
+          <h4 style="font-size:1.5vw">"LOVELY BISTRO</h4>
+           <p style="font-size:1.5vw; color: gray; font-weight: normal;">"The ambience was great - and the food even better! Simple recipes done well, with top-notch ingredients. Will be back!""
+           </p>
+            <p style="font-size:1.5vw">- Dani, Mother</p>       
+        </div>
+        
+         <div style=" width: 25%; float: left; margin-left:5%;font-family: solway;" class="animatable bounceIn">
+          
+          <h4 style="font-size:1.5vw">"TRANSPORTED TO PARIS</h4>
+          <p style="font-size:1.5vw; color: gray; font-weight: normal;">"Eating here made me miss Paris so much. What a treat! I will be bringing my client meetings here." </p>
+            <p style="font-size:1.5vw">- Carly, Entrepreneur</p>       
+        </div>
+            
+              
+
+ </section> <!-- end s-works --> 
+      
+       <section id="contacts" >
+
+     
+ 											
+         <div style=" width: 65%; float: left; margin-left:8%;font-family: solway; text-color:white;">
+          
+          <h4 style="color: white; font-size: 2vw">GET IN TOUCH</h4>
+          <p style="color: white; font-size: 1.5vw; font-weight: normal;">"Eating here made me miss Paris so much. <br>
+            What a treat! I will be bringing my client meetings here." </p><br><br>
+                <input style="width:180px; height:55px"></input><button style="background-color: orange; color: white">MESSAGE NOW</button>
+                 
+        </div>
+         
+         <div style=" width: 25%; float: left;font-family: solway; text-color: white;">
+          
+          <h4 style="color: white; font-size: 2vw">CONTACT US</h4><br>
+           
+           <p style="color: white; font-size: 1vw">Llalune_pastry@gmail.com</p>
+           <p style="color: white; font-size: 1vw">213 ST leonard CA 4025</p>
+           <p style="color: white; font-size: 1vw">0986476544</p>
+                 
+        </div>
+
+
+     </section> <!-- end s-works --> 
+      
+    
+      <script>   
+        filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+        
+        
+        jQuery(function($) {
+  
+  // Function which adds the 'animated' class to any '.animatable' in view
+  var doAnimations = function() {
+    
+    // Calc current offset and get all animatables
+    var offset = $(window).scrollTop() + $(window).height(),
+        $animatables = $('.animatable');
+    
+    // Unbind scroll handler if we have no animatables
+    if ($animatables.length == 0) {
+      $(window).off('scroll', doAnimations);
+    }
+    
+    // Check all animatables and animate them if necessary
+    $animatables.each(function(i) {
+       var $animatable = $(this);
+      if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+        $animatable.removeClass('animatable').addClass('animated');
+      }
+    });
+
+  };
+  
+  // Hook doAnimations on scroll, and trigger a scroll
+  $(window).on('scroll', doAnimations);
+  $(window).trigger('scroll');
+
+});
+        
+        
+      </script>
+  
+</body>

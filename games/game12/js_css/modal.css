@@ -1,0 +1,92 @@
+
+.modal {
+    display: none; /* Hidden by default */
+    position: all; /* Stay in place */
+    z-index: 0; /* Sit on top */
+    padding-top: 10px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    overflow:auto; overflow-y:scroll;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 75%;
+}
+.modal-content-Login {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 75%;
+}
+.modal-content {overflow:auto; overflow-y:scroll;}
+.modal-content {overflow:auto; overflow-y:scroll; height: 90%;}
+
+
+/* Modal Header */
+.modal-header {
+    background-color: #A2B70D;
+    margin: auto;
+    padding: 20px;
+    width: 75%;
+    height: 50px;
+    color:white;
+}
+
+/* The Close Button */
+.closeReturn {
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeReturn:hover{
+    color: #000;
+}
+
+.closeBorrow {
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeBorrow:hover{
+    color: #000;
+}
+
+button.buttonClose { background-color: #ff4d4d; border: none;color: black;
+                padding: 5px 10px; text-align: center; text-decoration: none;
+                display: inline-block; font-size: 15px; font-family: Consolas;
+                width: 100%;  font-weight: bold;}
+button.buttonClose:hover{background-color: gray; color: black}
+
+#printLabelHead{
+    font-size:15px; font-weight:bold;
+}
+/*
+tr:hover{
+    background-color: #d6f5d6;
+}
+*/
+
+table{
+    background-color: white;
+}
+.heading{font-family: helvetica;}
+.mainav{font-family: helvetica;}
+.clear{font-family: helvetica; font-size: 16px;}
+
+.divContainer{
+    width: 100%; border: 1px solid; text-align: left; color:white;
+    background-color: #8bc34a;
+}
+
+tr:hover{background-color: #e6ffe6}
+
+.scrollable{overflow-x: auto;}

@@ -1,0 +1,44 @@
+<style>
+    /*Button Design*/
+    .btnLetter1{
+        border: 2px solid black; margin: 2px;
+        font-weight: bold; color: black;
+        width: 10%; background-color: white;
+    }
+    .btnLetter1:hover{background-color: black; color: white}
+
+    .btnLetter2{
+        border: 2px solid black; margin: 2px;
+        font-weight: bold; color: black;
+        width: 10%; background-color: white;
+    }
+    .btnLetter2:hover{background-color: black; color: white}
+
+    /*Guess Box Design*/
+    .guessBox_Player1{
+        border: 2px solid white; color: white;
+        height: 50px; width: 10%; margin: 2px;
+        float: left;
+        font-size: 30px; text-align: center;
+    }
+
+    .guessBox_Player2{
+        border: 2px solid white; color: white;
+        height: 50px; width: 10%; margin: 2px;
+        float: left;
+        font-size: 30px; text-align: center;
+    }
+
+    .hint{color: white;}
+
+    /*Greetings Design*/
+    #greetings_Player1{
+        font-size: 30px;
+    }
+    #greetings_Player2{
+        font-size: 30px;
+    }
+    span{font-size: 20px;}
+    .label{color:white;}
+    .try{color:white;}
+</style>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" >
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WEBSITES</title>
+  
+  <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+  <style>
+     .body1{
+       padding-top: 5%;
+  		padding-left: 7%;
+  		padding-right: 7%;
+       background-color: white;
+       text-color: black;
+       
+     }
+  	.body2{
+  							  
+  	padding-left: 7%;
+  	padding-right: 7%;
+    background-color: black
+  }
+  
+    
+  
+  
+  
+  </style>
+</head>
+
+<body id="top">
+  
+   <div id="page" class="s-pagewrap">
+
+
+        <!-- # site header 
+        ================================================== -->
+        <header class="s-header">
+            <div class="row s-header__inner">
+
+                <div class="s-header__block">
+                    <div class="s-header__logo">
+                        <a style="color:white; font-family:monospace;" href="index.html">
+                            MAJHOY.
+                        </a>
+                    </div>
+                </div> <!-- end s-header__block -->
+
+            </div> <!-- end s-header__inner -->
+        </header> <!-- end s-header -->
+  
+     <div class="body1" > 
+      
+      <h2>Simple Websites</h2>
+       <div class="row">
+            <div class="row folio-entries">
+                <div class="column entry" style="padding: 5%;">
+                    <a href="websites/bread/bread.html" class="entry__link glightbox">
+                        <div class="entry__thumb">
+                            <img src="images/bread.jpg" srcset="images/bread.jpg 1x, images/bread.jpg 2x" alt="" >
+                        </div>
+                      <center> <h4 style="margin-top: 5%; color: gray;">LA LUNE FRENCH BISTRO</h4></center>
+                        <div class="entry__info">
+                            <h4 class="entry__title"></h4>
+                            <div class="entry__cat">LA LUNE FRENCH BISTRO</div>
+                        </div>
+                      
+                    </a>
+                  
+                </div> <!-- entry -->
+              
+               <div class="column entry" style="padding: 5%;">
+                    <a href="websites/pawpaw/paw.html" class="entry__link glightbox">
+                       <div class="entry__thumb">
+                            <img src="images/pawpaw.jpg" srcset="images/pawpaw.jpg 1x, images/pawpaw.jpg 2x" alt="">
+                        </div>
+                      <center> <h4 style="margin-top: 5%; color: gray;">Pawpaw Animal Rescue</h4></center>
+                        <div class="entry__info">
+                            <h4 class="entry__title"></h4>
+                            <div class="entry__cat">Pawpaw Animal Rescue</div>
+                        </div>
+                    </a>
+                  
+                </div> <!-- entry -->
+            </div>
+       
+     </div></div>
+     
+    
+     <script>
+     jQuery(function($) {
+  
+  // Function which adds the 'animated' class to any '.animatable' in view
+  var doAnimations = function() {
+    
+    // Calc current offset and get all animatables
+    var offset = $(window).scrollTop() + $(window).height(),
+        $animatables = $('.animatable');
+    
+    // Unbind scroll handler if we have no animatables
+    if ($animatables.length == 0) {
+      $(window).off('scroll', doAnimations);
+    }
+    
+    // Check all animatables and animate them if necessary
+    $animatables.each(function(i) {
+       var $animatable = $(this);
+      if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+        $animatable.removeClass('animatable').addClass('animated');
+      }
+    });
+
+  };
+  
+  // Hook doAnimations on scroll, and trigger a scroll
+  $(window).on('scroll', doAnimations);
+  $(window).trigger('scroll');
+
+});
+     
+     
+     </script>
+ 
+</body>
+</html>

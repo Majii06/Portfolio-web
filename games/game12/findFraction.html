@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="fabric.min.js"></script>
+  <link rel="stylesheet" href="myStyle.css">
+  <title>Document</title>
+</head>
+<body>
+
+<div class="drawing">
+  <canvas id="myCanvas" height="500" width="750" style="border:solid blue 1px;"></canvas>
+</div>
+
+
+  <input type="text" id="numerator">
+  <input type="text" id="denominator">
+
+
+<div id="startGuess" height="500" width="750" style="border:solid blue 1px;">
+  <div id="welcome">Find the Fraction</div>
+  <div id="answerResponse"></div>
+  <button id="generateTask" onclick="generateTask()">Generate New Task</button>
+</div>
+
+  <div id="answerProgress"></div>
+
+<script src="myScript.js"></script>
+</body>
+</html>

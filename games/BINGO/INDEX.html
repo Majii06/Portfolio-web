@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINGO</title>
+
+	<link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css"> 
+	<link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	 <script src="bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+
+	 <style type="text/css">
+ 		
+ 		
+
+	@keyframes blink{
+	 		0%{opacity: 1;}
+	 		50%{opacity: 0;}
+	 		100%{opacity: 1;}
+	 	}
+	
+	 	h1,h5{
+	 		color: #d3d6db;
+	 	}
+	 	.container {
+	 		height: 100%;
+	 		width: 100%;
+	 		background: #303841;
+	 		border-radius: 20px;
+	 		margin-top: 7%;
+	 		overflow-y: scroll;
+	 	 	align-items: center;
+	 	  padding: 2%;
+	 	}
+
+
+ 	 		
+ 	 		h1{text-align: left;
+ 	 			margin-left: 2%;
+
+	 	}
+	 	table{
+			height: 30vw;
+	 		width: 25vw;
+	 		border-color: #d3d6db;
+	 		margin: 2%;
+	 		float: left;
+
+	 	}
+
+	 	tr{
+	 		border-style: solid;
+	 		border-color: #d3d6db;
+
+	 	}
+	 	td{
+	 		border-style: solid;
+	 		border-color: #d3d6db; 
+	 		font-size: 1.5vw;
+	 		text-align: center;
+	 		color: #e8d5b7;
+	 	}
+
+	 	button{
+	 		font-size: 1vw;
+	 	  
+	 	}
+
+	 	.styles{
+
+	 		margin: 30px;
+	 		width: 20%;
+	 		height: 80px;
+	 		align-items: center;
+	 	}
+
+	body{
+	 		background: #3a4750;
+	 	}
+
+	 	#straight,#diagonal,#allStyles{
+	 		margin:2%;
+	 		width: 18%;
+	 		border-radius: 4px;
+	 		box-shadow: 3px 3px 3px 3px black;
+	 		color: black;
+	 		font-size: 20px;
+	 		font-weight: 400;
+	 		touch-action: manipulation;
+
+	 	}
+	
+		#allStyles:focus{
+	 		text-decoration: none;
+	 	}
+	 		#allStyles:hover{
+	 		text-decoration: none;
+	 		color: white;
+	 		box-shadow: 5px 5px 5px 5px green;
+	 	}
+	
+	#straight:focus{
+	 		text-decoration: none;
+	 	}
+	 		#straight:hover{
+	 		text-decoration: none;
+	 		color: white;
+	 		box-shadow: 5px 5px 5px 5px red;
+	 	}
+	
+	#diagonal:focus{
+	 		text-decoration: none;
+	 	}
+	 		#diagonal:hover{
+	 		text-decoration: none;
+	 		color: white;
+	 		box-shadow: 5px 5px 5px 5px orange;
+	 	}
+	
+	 	#selected{
+	 		float: center;
+	 	}
+
+	 	#random{
+	 		float: right;
+	 		font-size: 30px;
+	 		margin-right: 3%;
+	 		background-color: green;
+	 		color: white;
+	 		padding: 1%;
+	 		border: 5px solid darkgreen;
+	 		left: 93%;
+	 		top: 20%;
+	 		position: fixed;
+	 		margin-right: 2%;
+
+	 	 	
+	 	}
+
+	 	#reset{
+	 		float: right; 
+	 		margin-right: 30px;
+	 		background-color:orange ;
+	 		color: white;
+	 		border-radius: 10%;
+	 	}
+	 	select{
+	 		width: 70px;
+	 		height: 30px;
+	 	}
+	 	#myModal{
+	 		display: none;
+	 		position: fixed;
+	 		z-index: 1;
+	 		padding-top: 100px;
+	 		left: 0;
+	 		top: 0;
+	 		width: 100%;
+	 		height: 100%;
+	 		overflow: auto;
+	 		
+
+	 	}
+
+	 	#content{
+
+	 		background-color: orange;
+	 		margin: auto;
+	 		padding: 20px;
+	 		border: 1px solid black;
+	 		width: 30%;
+	 		color: black;
+	 		text-align: CENTER;
+
+
+	 	}
+	#introModal{
+	 		position: fixed;
+	 		z-index: 1;
+	 		padding-top: 100px;
+	 		left: 0;
+	 		top: 0;
+	 		width: 100%;
+	 		height: 100%;
+	 		overflow: auto;
+	 		display: none;
+		  box-shadow: 10px 10px 10px 10px black;
+	 	}
+
+	 	#introContent{
+
+	 		background: #3a4750;
+	 		margin: auto;
+	 		padding: 20px;
+	 		border: 1px solid black;
+	 		width: 80%;
+	 		text-align: CENTER;
+	 		box-shadow: 10px 10px 10px 10px black;
+
+	 	}
+ 		
+ 		#settingModal{
+	 		display: none;
+	 		position: fixed;
+	 		z-index: 1;
+	 		padding-top: 8%;
+	 		left: 0;
+	 		top: 0;
+	 		width: 100%;
+	 		height: 100%;
+	 		overflow: auto;
+	 	}
+
+	 	#settingContent{
+	 		background-color: #3a4750;
+	 		margin: auto;
+	 		padding: 20px;
+	 		width: 60%;
+	 		color: black;
+	 		text-align: CENTER;
+	 		box-shadow:10px 10px 10px 10px black;
+
+
+	 	}
+ 		
+	#play{
+	 	font-size: 150px; color: darkred;
+	 }
+	#play:focus{
+	 		text-decoration: none;
+	 }
+	#play:hover{
+	 		color: lightgreen;
+	}
+		 	.close{
+	 		color: red;
+	 		text-decoration: none;
+
+	 	}
+
+		#title{
+	 	text-align: center;
+	 	color: white;
+	 	font-family: monospace;
+	 	margin-top: 5%;
+	 	font-size: 120px
+	 }
+	 #lplay{
+	 	color: orange;
+	 	font-size: 50px;
+	 	text-align: center;
+	 	font-family: monospace;
+	 	margin-top: 5%;
+	 	animation: blink 1s infinite;
+	 }
+		
+	 	img{
+	 		margin: auto;
+	 	}
+	 	#play-Again{
+	 		
+	 		float: left;
+	 		width: 100px;
+	 		margin-left: 20%;
+	 		background-color: green;
+	 		border-radius: 20%;
+	 	}
+
+	 	#close{
+	 		
+	 		float: right;
+	 		width: 100px;
+	 		margin-right:20% ;
+	 		background-color: red;
+	 		border-radius: 20%;
+	 	}
+	
+  #menuModal{
+  
+	 		position: fixed;
+	 		z-index: 1;
+	 		padding-top: 100px;
+	 		left: 0;
+	 		top: 0;
+	 		width: 100%;
+	 		height: 100%;
+	 		overflow: auto;
+	 		display: none;
+		  box-shadow: 10px 10px 10px 10px black;
+	 	}
+
+	 	#menuContent{
+
+	 		background: #3a4750;
+	 		margin: auto;
+	 		padding: 20px;
+	 		border: 1px solid black;
+	 		width: 80%;
+	 		box-shadow: 10px 10px 10px 10px black;
+	 		text-align: center;
+
+	 	}
+	
+	 #selectedInt{
+	 	 
+	 	text-align: center;
+	 	margin: 1%;
+	 }
+	#start{
+		width: 50%;
+		height: 10%;
+		margin:2%;
+	 		background-color: #025043;
+	 		border-radius: 4px;
+	 		box-shadow: 3px 3px 3px 3px black;
+	 		color: black;
+	 		font-size: 3vw;
+	 		font-weight: 400;
+	 		text-color: white;
+	 		touch-action: manipulation;
+	}
+	
+	#start:focus{
+	 		text-decoration: none;
+	 	}
+	 		#start:hover{
+	 		text-decoration: none;
+	 		color: white;
+	 		box-shadow: 5px 5px 5px 5px lightgreen;
+	 	}
+	hr{
+		background-color:black;
+	}
+	select{
+		width: 8%;
+	height: 15%;
+		border-radius: 20%;
+	 font-size: 2.5vw;
+	}
+ 		
+ 		#setting{
+/*	 		width: 80px;
+	 		height: 80px;
+	 		border-radius: 50%;
+	 		background-color: red;
+	 		border: 10px solid black;*/
+	 		font-size: 7vw;
+	 		color:black;
+	 		left: 93%;
+	 		top: 3%;
+	 		position: fixed;
+	 		display: block;
+	 	}
+	 	#setting: focus{
+	 		text-decoration: none;
+	 	}
+	 	#setting:hover{
+	 		text-decoration: none;
+	 		color: lightgreen;
+	 	}
+ 		
+ 		#btnMusic{
+	 		margin:2%;
+	 		width: 20%;
+	 		background-color: orange;
+	 		border-radius: 4px;
+	 		box-shadow: 3px 3px 3px 3px black;
+	 		color: white;
+	 		font-size:4vw;
+	 		font-weight: 400;
+	 		touch-action: manipulation;
+
+	 	}
+	 	#btnMusic:focus{
+	 		text-decoration: none;
+	 	}
+	 	#btnMusic:hover{
+	 		text-decoration: none;
+	 		color: lightgreen;
+	 		box-shadow: 7px 7px 7px 7px black;
+	 	}
+ 		
+ 			#wonModal{
+	 		display: none;
+	 		position: fixed;
+	 		z-index: 1;
+	 		padding-top: 8%;
+	 		left: 0;
+	 		top: 0;
+	 		width: 100%;
+	 		height: 100%;
+	 		overflow: auto;
+	 	}
+
+	 	#wonContent{
+
+	 		background-color: #3a4750;
+	 		margin: auto;
+	 		padding: 20px;
+	 		width: 60%;
+	 	 
+	 		color: black;
+	 		text-align: CENTER;
+	 		box-shadow:10px 10px 10px 10px black;
+
+
+	 	}
+ 		
+ 		#btnClose{
+		width: 2vw; height: 2vw; color: white;
+	}
+	
+		 </style>
+
+
+
+</head>
+<body>
+<br>
+<a href="../../games.html" id="btnClose"><i class="material-icons" style="font-size: 3vw;">exit_to_app</i></a>
+	<H1 id="text" style="font-size: 6vw; ">BINGO CARD</H1>
+	<i class="fa fa-gear fa-spin" id="setting" onclick="btnSetting()"></i><br>
+ 		
+			<button id="random" onclick="submit()" ><i class="material-icons" style="font-size:48px;color:white">autorenew</i></button> 
+			
+
+			<h1 id="selected" style="text-align:center; color:ORANGE"></h1>
+		
+	
+		<div id="selectedInt"></div>
+
+		
+
+	</div>
+	
+	<div class="container" id="tables">		<!-- <table id="table"class="table">
+			<tbody id="tbody">
+			</tbody>
+			
+
+		</table> -->
+		<br>
+		
+		
+
+
+	</div>
+
+<div class="modal" id="wonModal">
+		
+		<div class="modal-content" id="wonContent">
+			<br>
+			<!-- <span class="close" style="float: right;">&times;</span> -->
+			<br>
+			<h1 style="text-align: CENTER; font-family: fantasy; font-size: 6vw; animation: blink 1s infinite; color: yellow"> B-I-N-G-O!</h1><HR>
+			<h5  style="text-align: CENTER; font-family: fantasy; font-size: 2vw;">You slayed it! Wanna play again?</h5><br>
+
+			<center>
+		<BUTTON onclick="btnPlayAgain()" id="start"> PLAY AGAIN </BUTTON>
+			</center>
+			
+			<br>		
+		</div>
+
+	</div>
+
+
+
+	
+	<div class="modal" id="introModal">
+		
+		<div class="modal-content" id="introContent">
+		 		
+			<br>
+			<!-- <span class="close" style="float: right;">&times;</span> -->
+		 		
+			<h1 id="title" style="font-size: 7vw;">BINGO GAME</h1><br>
+		 <center> <i id="play"class="fa fa-play-circle" onclick="btnPlay()" style="font-size: 10vw;"></i></center><br>
+		<h3 id="lplay" style="font-size: 3vw;">LET'S PLAY!</h3>
+		<br><br>
+
+
+		</div>
+			<br>		
+	</div>
+	
+
+		<div class="modal" id="menuModal">
+		
+		<div class="modal-content" id="menuContent">
+		<br>
+		<br>
+			<!-- <span class="close" style="float: right;">&times;</span> -->
+			
+			<H1 style="float: left;font-size: 3vw"> MENU </H1> 
+		<h5 style="color: orange; float: left;font-size: 2.5vw">SELECT NUMBER OF CARDS</h5> 
+			<div>
+				<select id="numberOfCards">
+			
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+ 
+				<option>4</option>
+				<option>5</option>
+
+				</select> 
+			</div><br><br>
+		<h5 style="color: orange; font-size: 2.5vw">SELECT BINGO STYLES</h5> 
+			<div>
+		<button id="straight" onclick="straight()" style = "background-color:red;font-size: 2vw; text-color: white;"> Straight</button>
+		<button id="diagonal" onclick="diagonal()" style = "background-color:orange;font-size: 2vw;text-color: white;">Diagonal</button>
+		<button id="allStyles" onclick="allStyles()" style = "background-color:green;font-size: 2vw ;text-color: white;">All</button><br>
+			</div><br>
+			<center>
+		<BUTTON onclick="btnStart()" id="start"> START </BUTTON>
+			</center>
+			<br><br>
+
+			</div>
+			<br>		
+		</div>
+
+<div class="modal" id="settingModal">
+		
+		<div class="modal-content" id="settingContent">
+		 		<button style = "color:white; margin-left:85%; width:5vw;height:5vw;font-size: 3vw; border-radius: 10%; border-color: white; background-color: #3a4750;" onclick="btnClose()">X</button>
+			<h1 style="text-align: CENTER; font-family: fantasy; font-size: 5vw;"><i class="fa fa-gear fa-spin" style="font-size: 4vw;"></i> Settings</h1><br>
+			<div>
+				<button id="btnMusic" onclick="btnMusic()"><i id="music" class="fa fa-volume-up" style="font-size:4vw"></i><H5 style="font-size:2vw">Music</H5></button>
+				<button id="btnMusic" onclick="btnSound()"> <i id="sounds" class="fa fa-music" style="font-size:4vw"></i><H5 style="font-size:2vw">Sounds</H5></button>
+
+				<br><br>
+			<button onclick="btnQuit()" style="width: 70%; background-color: red;"><h5 style="font-size:3vw">QUIT</h5> </button>
+			</div>
+			<br>		
+		</div>
+
+	</div>
+
+	
+	
+
+
+
+
+
+<script type="text/javascript">
+
+	var firstrow = ["B", "I","N","G","O"];
+	var tables = [];
+	var row2 = [];
+	var selectedNumber = 0;
+	var snumbers = [];
+	var min = 1;
+	var max = 15;
+	var bingoStyle ="";
+	var selectedInts = document.getElementById('selectedInt');
+	var container = document.getElementById('tables');
+	var numberOfCards = document.querySelector('#numberOfCards');
+	var NumofCards = numberOfCards.value;
+	var span = document.getElementsByTagName("span")[0];
+	var bingoModal = document.getElementById("wonModal");
+	var close = document.getElementById('close');
+	var play = document.getElementById('play-Again');
+	var music = new Audio("music.mp3");
+var introModal = document.getElementById("introModal");
+var menuModal = document.getElementById("menuModal");
+var setting = document.getElementById('settingModal');
+var roll = new Audio("roll.mp3");
+var music = new Audio("music.mp3");
+var quit = new Audio("quit.mp3");
+var finished = new Audio("finished.mp3");
+var muteMusic = document.getElementById('music');
+		var muteSounds = document.getElementById('sounds');
+introModal.style.display = "block";
+
+
+
+			
+		function btnStart(){
+				  if(bingoStyle != ""){
+				   		
+			    menuModal.style.display ="none";	
+			 		  numberOfCardsBTN();
+		 		   roll.play();
+		 	   	music.play();
+				  }
+else{
+ 		window.alert("Please select a Bingo style, thank you!");
+}		 		
+			}
+	
+function btnPlay(){
+	
+	introModal.style.display = "none";
+	menuModal.style.display = "block";
+}
+ 		
+ 		function btnClose(){
+ 		 		settingModal.style.display = "none";
+ 		}
+
+	function btnMusic(){
+
+		if(muteMusic.className == 'fa fa-volume-off'){
+			muteMusic.className = 'fa fa-volume-up';
+			music.play();
+		}
+		else{
+			muteMusic.className = 'fa fa-volume-off';
+			music.pause();
+		}
+		
+		muteMusic.style.fontSize = '4vw';
+	}
+
+	function btnSound(){
+
+		if(muteSounds.className == 'fa fa-remove'){
+			muteSounds.className = 'fa fa-music';
+		 		roll.play();
+		}
+		else{
+			muteSounds.className = 'fa fa-remove';
+		 		
+		}
+		
+		muteSounds.style.fontSize = '4vw';
+	}
+ 		
+ 		function checkSounds(){
+ 		 		
+ 		 		if(muteSounds.className == 'fa fa-music'){
+ 		 		 		roll.play();
+ 		 		}
+ 		 		
+ 		}
+
+function btnSetting(){
+  
+ 		setting.style.display = "block";
+}
+	//FIRST ROW BINGO
+
+			
+	// var bingobtn = document.getElementById('bingobtn');
+	// bingobtn.onclick = function (){
+	// 	bingoModal.style.display = "block";
+	// }
+	close.onclick = function (){
+		bingoModal.style.display = "none";
+	}
+	window.onclick = function (event){
+		if(event.target == bingoModal){
+			bingoModal.style.display = "none";
+		}
+	}
+	function numberOfCardsBTN(){
+
+			NumofCards = numberOfCards.value;
+			console.log(NumofCards);
+			for(var cards = 1; cards <= NumofCards; cards++){
+
+				generateRowData();
+
+				min=1;
+				max=15;
+				
+			}
+			
+		
+			min=1;
+			max=75;
+
+	}
+	
+
+
+	function generateRowData(){ 
+
+		
+		for(var number1 = 0; number1<=4; number1++){
+	
+			var group  = [];
+				for (var i = 0; i  <= 4; i ++) {
+			
+				var sample = 0;
+
+	 				do{
+						sample = Math.floor(Math.random() * (max - min) + min);
+						
+						}while(group.includes(sample));
+
+				group.push(sample);
+		}
+
+			row2.push(group);
+
+			group=[];
+			min+=15;
+			max+=15;
+
+
+		}
+
+		row2[2][2] = "B";
+
+		generateTable();
+			
+		
+	}
+	
+	function generateTable(){
+
+
+
+
+		var newTable = document.createElement("table");
+		var newTbody = document.createElement("tbody");
+
+		var row1 = document.createElement("tr");
+
+		for( var first = 0; first < 5; first++){
+		var Firsttd = document.createElement("td");
+		Firsttd.innerText = firstrow[first];
+		Firsttd.style.color="#e8d5b7";
+		row1.appendChild(Firsttd);
+		row1.style.backgroundColor="#fc3a52";
+		newTbody.appendChild(row1);
+		}
+
+
+		for (var i = 0; i <= 4; i++){
+		
+		
+			var rows = document.createElement("tr"); //row
+					for (var j = 0; j <=4; j++){ // td
+					
+							var td = document.createElement("td");
+							let data = row2[j][i];
+							td.innerText = data; 
+							rows.appendChild(td);
+
+							
+						
+					}
+
+
+			newTbody.appendChild(rows);
+			
+		}
+
+		newTable.appendChild(newTbody);	
+
+		
+
+		var r = newTable.getElementsByTagName("tr")[3];
+		var d = r.getElementsByTagName("td")[2];
+        d.style.backgroundColor = "red";	
+
+        container.appendChild(newTable);
+
+
+       row2 =[];
+		
+	}
+
+
+
+	function submit()
+	{
+	 		checkSounds();
+		if(bingoStyle == ""){
+
+			window.alert("Please select a Bingo style, thank you!");
+		}
+		else{
+
+			do{
+			selectedNumber = Math.floor(Math.random()*max);
+
+			}while(snumbers.includes(selectedNumber));
+			document.getElementById('selected').innerText = selectedNumber;
+			snumbers.push(selectedNumber);
+			// console.log(snumbers);
+
+			var ints = document.createElement('button');
+			ints.style.backgroundColor = "orange"; 
+			ints.style.borderRadius = "50%";
+			ints.innerText = selectedNumber;
+			selectedInts.appendChild(ints);
+
+			for(var bilang = 0; bilang < NumofCards; bilang++){
+				for (var i = 0; i <=4; i++) {
+			
+					for (var j = 0; j <=4; j++) {
+						
+							var elementRow = document.getElementsByTagName("table")[bilang];
+							var last = elementRow.rows[j+1];
+							var element = last.cells[i];
+
+						if (selectedNumber == element.innerHTML) {
+							 
+							 last = elementRow.rows[j+1];
+							 element = last.cells[i];
+							element.style.backgroundColor="red";
+							// console.log(element);
+						}
+				
+					}
+				}
+			}
+
+			console.log(selectedNumber);
+		
+
+			if (bingoStyle == "straight") {
+			straight();
+				
+			}
+			if (bingoStyle == "diagonal") {
+			diagonal();
+			}
+			if (bingoStyle == "all") {
+			allStyles();
+			}
+
+
+		}
+		
+		
+
+
+	}
+
+	function straight(){
+
+
+			document.getElementById('diagonal').disabled = true;
+			document.getElementById('allStyles').disabled = true;
+
+		if(bingoStyle != "all"){
+			bingoStyle = "straight";
+			console.log(bingoStyle);
+			document.getElementById('straight').style.backgroundColor = "#e8d5b7";
+		}
+
+		
+
+		var redNumbers = 0;
+
+		//VERTICAL LINE
+
+		for(var bilang = 0; bilang < NumofCards; bilang++){
+			for (var i = 0; i <= 4; i++) {
+			
+		 		for (var j = 0; j <= 4; j++) {
+
+		 			var elementRow = document.getElementsByTagName("table")[bilang];
+		 			var element = elementRow.rows[i+1];
+		 			var theElement = element.cells[j];
+		 			
+		 			if(theElement.style.backgroundColor == "red" ) {
+		 					// console.log(theElement.innerText);	
+
+		 					redNumbers +=1;
+
+		 					if(redNumbers == 5){
+		 						console.log("BINGO");	
+		 					 		music.pause();
+		 					 		finished.play();
+		 						
+
+		 							for(var red = 0; red<=4; red++){
+		 								var td = element.cells[red];
+		 								td.style.backgroundColor ="#d3d6db";
+		 								td.style.color="black";
+		 							}
+		 						
+		 						bingoModal.style.display = "block";
+		 						document.getElementById("random").disabled = true;
+		 					}
+		 			}
+		 		}
+
+		 	redNumbers = 0;
+
+			}
+		}	
+
+
+		//HORIZONTAL LINE 
+
+		for(var bilang = 0; bilang < NumofCards; bilang++){
+			for (var i = 0; i <= 4; i++) {
+			
+		 		for (var j = 0; j <= 4; j++) {
+
+		 			var elementRow = document.getElementsByTagName("table")[bilang];
+		 			var element = elementRow.rows[j+1];
+		 			var theElement = element.cells[i];
+		 			
+		 			if(theElement.style.backgroundColor == "red" ) {
+		 					// console.log(theElement.innerText);	
+
+		 					redNumbers +=1;
+
+		 					if(redNumbers == 5){
+		 						console.log("BINGO");
+		 					 		music.pause();
+		 					 		finished.play();
+		 						
+
+		 						for(var red = 0; red<=4; red++){
+		 								var rowba = elementRow.rows[red+1];
+		 								var td = rowba.cells[i];
+		 								console.log(td.innerHTML);
+		 								td.style.backgroundColor ="#d3d6db";
+		 								td.style.color="black";
+
+		 							}
+		 						bingoModal.style.display = "block";
+		 						document.getElementById("random").disabled = true;
+		 					}
+		 			}
+		 		}
+
+		 		redNumbers = 0;
+
+			}
+		}
+
+	}
+
+
+	function diagonal(){
+
+			document.getElementById('straight').disabled = true;
+			document.getElementById('allStyles').disabled = true;
+
+		if(bingoStyle != "all"){
+			document.getElementById('diagonal').style.backgroundColor="#e8d5b7";
+			bingoStyle ="diagonal";
+			console.log(bingoStyle);
+		}
+		
+		
+		var selectedRed1 = 0;
+		var selectedRed2 = 0;
+
+		for(var bilang = 0; bilang < NumofCards; bilang++){
+			for( var r = 0; r <= 4; r++){
+				
+				var t = document.getElementsByTagName("table")[bilang];
+				var trow = t.rows[r+1];
+				var tdata = trow.cells[r];
+				
+				
+				if(tdata.style.backgroundColor == "red" ){
+					console.log(selectedRed1);
+				
+					selectedRed1 ++;	
+					if(selectedRed1 == 5){
+						console.log("bingo");
+					 		music.pause();
+					 		finished.play();
+						
+
+
+							for(var red = 0; red<=4; red++){
+
+									var tdrow = t.rows[red+1];
+									var td = tdrow.cells[red];
+		 							td.style.backgroundColor ="#d3d6db";
+		 							td.style.color="black";
+
+								
+		 				   }
+		 				bingoModal.style.display = "block";
+		 				document.getElementById("random").disabled = true;
+					}
+				}	
+
+			}
+
+			selectedRed1 = 0;
+		}
+
+
+		for(var bilang = 0; bilang < NumofCards; bilang++){
+			var thisrow = 0;
+			for( var i = 4; i >= 0; i--){
+				
+				var t = document.getElementsByTagName("table")[bilang];
+				var trow = t.rows[thisrow+1];
+				var tdata = trow.cells[i];
+
+
+				if(tdata.style.backgroundColor == "red" ){
+					console.log(selectedRed2);
+					selectedRed2 ++;
+
+					if(selectedRed2 == 5){
+						console.log("bingo");
+					 		music.pause();
+					 		finished.play();
+					 		
+						
+
+						var thirRow2 =0;
+						for(var red = 4; red >=0; red--){
+
+		 							var tdrow = t.rows[thirRow2+1];
+									var td = tdrow.cells[red];
+		 							td.style.backgroundColor ="#d3d6db";
+		 							td.style.color="black";
+
+		 							thirRow2++;
+		 					}
+
+		 				bingoModal.style.display = "block";
+		 				document.getElementById("random").disabled = true;
+					}
+				
+				}
+
+				thisrow++;
+
+			}
+
+			selectedRed2 = 0;
+		}
+
+	}
+
+	function allStyles(){
+
+		bingoStyle = "all";
+		document.getElementById('allStyles').style.backgroundColor="#e8d5b7";
+		
+		straight();
+		diagonal();
+
+		document.getElementById('straight').disabled = true;
+		document.getElementById('diagonal').disabled = true;
+		
+	}
+
+
+function btnQuit(){
+ 		 quit.play();
+ 		clearAll();
+ 		music.pause();
+ 		introModal.style.display ="block";
+}
+ 		
+ 		function btnPlayAgain()
+ 		{
+ 		 		menuModal.style.display = "block";
+ 		 		wonModal.style.display = "none";
+ 		 		clearAll();
+ 		 		roll.play();
+ 		 		muteMusic.className = "fa fa-volume-up";
+ 		 		muteSounds.className = "fa fa-music";
+ 		}
+	function clearAll(){
+
+ 
+		 row2 = [];
+		 selectedNumber = 0;
+		 snumbers = [];
+		 min = 1;
+		 max = 15;
+		 bingoStyle ="";
+		document.getElementById('selected').innerText = "NUMBER";
+		document.getElementById('straight').style.backgroundColor = "red";
+		document.getElementById('diagonal').style.backgroundColor = "yellow";
+		document.getElementById('allStyles').style.backgroundColor = "orange";
+		document.getElementById('numberOfCards').value = 1;
+
+		
+		while(container.hasChildNodes()){
+				container.removeChild(container.firstChild);
+		}
+
+		while(selectedInts.hasChildNodes()){
+				selectedInts.removeChild(selectedInts.firstChild);
+		}
+
+			document.getElementById('straight').disabled = false;
+		document.getElementById('diagonal').disabled = false;
+	 	document.getElementById('allStyles').disabled = false;
+			document.getElementById("random").disabled = false;
+
+			 bingoModal.style.display = "none";
+	 		setting.style.display = "none";
+	 		
+	 			
+	}
+
+		
+
+
+ 	
+	
+
+</script>
+
+</body>
+
+</html>

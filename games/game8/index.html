@@ -1,0 +1,271 @@
+
+    <head>
+       
+        <title>EVEN and ODD</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css"> 
+   <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="jquery-3.5.1.min.js"></script>
+     <script src="bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+
+     </head>  
+        <style type="text/css">
+            #container{
+                 width: 100%;
+               margin: auto;
+               height: 100%;
+               padding: 2%;
+               
+
+            }
+            body{
+                background-image: url('back.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                 width: 100%;
+               margin: auto;
+               height: 100%;
+            }
+
+          
+
+            #board{
+                margin-top: 5%;
+                padding-top: 20%;
+                height: 15vw;
+                width: 15vw;
+                background-image: url("scoringboard.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                align-items: center;
+                text-align: center;
+                color: white;
+
+                
+            }
+.button{
+        background-image: url('leaf.gif');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 10vw;
+        height: 10vw;
+        display: inline-block;
+        text-align: center;
+        font-family: monospace;
+        
+        font-size: 3vw;
+        float: right;
+ 
+}
+
+.button a{
+
+    color: white;
+  font-family:Helvetica, sans-serif;
+ 
+  margin-top:35%;
+  text-align: center;
+  text-decoration:none;
+  display:block;
+  position:relative;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  
+}
+
+.button a:active{
+  top:10px;
+
+ border-radius: 100px;
+
+}
+
+.button:after{
+    
+  content:"";
+  height:100%;
+  width:100%;
+  padding:4px;
+  position: absolute;
+  border-radius: 100px;
+  bottom:-15px;
+  left:-4px;
+  z-index:-1;
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+
+.cookies{
+width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightyellow;
+  color: #000;
+  text-align: center;
+  border-radius: 20px;
+  padding: 30px 30px 70px;
+
+}
+
+.cookiesContent {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #D2B48C;
+  color: #000;
+  text-align: center;
+  border-radius: 20px;
+  padding: 30px 30px 70px;
+
+}
+
+  button.accept {
+
+    
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    padding: 14px;
+    font-size: 16px;
+    color: white;
+    box-shadow: 0px 6px 18px -5px rgba(237, 103, 85, 1);
+  }
+
+        
+   #btnClose{
+		width: 50px; height: 50px; margin-left: 90%; background-color:blue; color: black;
+	}
+
+   .scores{             
+        float: left;
+        margin-left: 5%;
+        font-weight: bold;
+        width: 20%;
+        padding-bottom: 10%;
+        margin-top: 15%;
+        text-align: center;
+        
+    }
+</style>
+  
+    <body>
+        <div id="container">
+         <button style="width: 50px;margin-left: -25%; height: 50px; background-color:transparent; border: transparent; color: white;" onclick="window.location.href='../../games.html';"><i class="material-icons" style="font-size: 50px;">exit_to_app</i></button>
+            <div class="scores">
+                    
+                     <h3 id="levels"  style="color: brown; font-size: 3vw">LEVEL 1</h3>
+                    
+                        <div id="life" style="width: 100%; ">
+                        </div>
+                        <div class="container" id="board">
+                            <h2 style="font-family: monospace;font-size: 1.5vw;color: white;">YOUR SCORE:</h2>
+                            <h1 id="score" style="font-family: monospace; font-size: 3vw;color: white;">3</h1>
+                        </div>
+                   
+            </div>
+
+
+                    <h2 id="text" style="font-family: monospace; color: brown; text-align: center;"></h2><br>
+                    <center>
+                    <div id="display" style="display: inline-block; width: 55%; ">
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        <div class="button">
+                            <a href=#></a>
+                        </div>
+                        
+
+                    </div></center>
+                </div>
+
+                
+            </div>
+
+
+<div>       <!-- Modal for Results -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  
+  <div class="container-fluid">
+        <div class="cookies" id="cookiesPopup">
+    
+                <div id="modal_pic"></div><hr>
+                <h5 id="modal_content"></h5><br>
+    
+
+                <button type="button" class="btn btn-primary" id="modalbuton" style="width: 150px;"></button>
+        
+        </div>
+    </div>
+</div>
+</div>
+            
+        </div>
+        
+     
+
+            <script src="script.js"></script>
+</body>

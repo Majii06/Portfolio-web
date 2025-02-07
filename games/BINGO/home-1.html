@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINGO</title>
+
+	<link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css"> 
+	<link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	 <script src="bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+
+	 <style type="text/css">
+
+	 	@keyframes blink{
+	 		0%{opacity: 1;}
+	 		50%{opacity: 0;}
+	 		100%{opacity: 1;}
+	 	}
+
+	 body{
+	 	background: #3a4750;
+	 }
+	 h1{
+	 	text-align: center;
+	 	color: white;
+	 	font-family: monospace;
+	 	margin-top: 10%;
+	 	font-size: 120px
+	 }
+	 h3{
+	 	color: orange;
+	 	font-size: 50px;
+	 	text-align: center;
+	 	font-family: monospace;
+	 	margin-top: 5%;
+	 	animation: blink 1s infinite;
+	 }
+	 #play{
+	 	font-size: 150px; color: darkred;
+	 }
+	#play:focus{
+	 		text-decoration: none;
+	 }
+	#play:hover{
+	 		color: lightgreen;
+/*	 		shadow:10px 10px 10px 10px black;*/
+
+	 </style>
+
+</head>
+
+	<body>
+		<h1>BINGO GAME</h1><br>
+		 <center> <a href="INDEX.html" onclick="btnPlay()"><i id="play"class="fa fa-play-circle"></i></a></center><br>
+		<h3>LET'S PLAY!</h3>
+
+
+
+
+	</body>
+
+<script type="text/javascript">
+
+	var music = new Audio("music.mp3");
+
+	function btnPlay(){
+		music.play();
+	}
+</script>
+
+</html>
+

@@ -1,0 +1,547 @@
+
+<head>
+	<title>Addition</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css"> 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+	 
+	     <script src="jquery-3.5.1.min.js"></script>
+	<script src="bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+	 <style type="text/css">
+	 	
+		.container-fluid
+		{
+			background-image: url("back.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			 width: 100%;
+      height: 100%;
+			padding: 5%;
+			
+
+		}
+
+ 
+		
+#col{
+		
+	
+			background-color: black;
+			border: 7px solid darkgray;
+		border-bottom: 5vw solid gray;
+	
+		
+}
+			
+		
+
+		#display{
+			padding:8%;	
+			height: 55%;
+			width: 80%;
+			 text-align: center;
+			 text-color: black;
+			 display: inline-block;
+ 			font-family: monospace;
+ 			border-radius: 20%;
+ 			margin: 2%;
+ 			border: 5px solid gray;
+
+
+		}
+
+
+.button{
+  position:relative;
+  display:inline-block;
+	height: 50px;
+	width: 50%;
+	font-family: monospace;
+	margin-top: 2%;
+
+}
+
+.button a{
+  color:white;
+  font-family:Helvetica, sans-serif;
+  font-weight:bold;
+  font-size:20px;
+  text-align: center;
+  text-decoration:none;
+  background-color:#FFA12B;
+  display:block;
+  position:relative;
+  padding:20px 40px;
+  
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+  
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+  box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+  
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 100px;
+}
+
+.button a:active{
+  top:10px;
+  background-color:#F78900;
+    border-radius: 100px;
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #915100;
+  box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+}
+
+.button:after{
+  content:"";
+  height:100%;
+  width:100%;
+  padding:4px;
+  position: absolute;
+  border-radius: 100px;
+  bottom:-15px;
+  left:-4px;
+  z-index:-1;
+  background-color:#2B1800;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+		input{
+			height: 70px;
+			border-radius: 100px;
+			font-family: monospace;
+			padding: 3px;
+			text-align: center;
+		}
+
+		.progress{
+			width: 250px;
+			height: 30px;
+			border: 2px solid white;
+			
+
+		}
+
+.cookies{
+width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightyellow;
+  color: #000;
+  text-align: center;
+  border-radius: 20px;
+  padding: 30px 30px 70px;
+
+}
+
+.cookiesContent {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgreen;
+  color: #000;
+  text-align: center;
+  border-radius: 20px;
+  padding: 30px 30px 70px;
+
+}
+
+
+  p {
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+  button.accept {
+    background-color: #ed6755;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    padding: 14px;
+    font-size: 16px;
+    color: white;
+    box-shadow: 0px 6px 18px -5px rgba(237, 103, 85, 1);
+  }
+
+.money{
+
+	margin: 1px;
+
+}
+
+
+
+	 	
+	#btnClose{
+		width: 50px; height: 50px; position: fixed; color: white; background-color: transparent; border: none;
+	}
+
+		
+	 </style>
+</head>
+
+
+<button onclick='window.location.href="../../games.html"' id="btnClose"><i class="material-icons" style="font-size: 50px;">exit_to_app</i></button>
+
+	<div class="container-fluid">
+		
+		
+		<div class="row">
+			<div class="w3-quarter" style="margin-top: 5%">
+				<h3 id="levels" style="font-family: monospace; font-style: bold; margin-top: 10%;">LEVEL 1</h3>
+				<div class="progress">
+  						<div class="progress-bar bg-warning progress-bar-striped active" role="progressbar"  aria-valuemin="0" aria-valuemax="100" id="score" style="width: 1%">
+  						</div>
+					</div>
+
+				<div id="life">
+				</div>
+				<!-- <div class="cloud">
+					<h5 style="padding-top: 70px; text-align: center;" id="text">"Let's start to count!"</h5>
+				</div> -->
+				<img src="cashier.png" style="width: 25vw;">
+			</div>
+
+			<div class="w3-threequarter" id="col" >
+				<center>
+				<div id="display" style="background-color: white;">
+					<h2 style="color: black;">What is the total amount?</h2><hr>
+					
+					
+				</div>
+				<div style = " display: inline;">
+					<input type="number" id="answer" style="font-size: 20px; width:60%;" placeholder="TOTAL AMOUNT" autofocus="true">
+					<!-- <button onclick="submit()"> ENTER </button> -->
+					  <div class="button" onclick="submit()">
+  							  <a href=#>submit</a>
+  						</div><br><br><br><br>
+					</center>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+		<!-- Modal for Results -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  
+  <div class="container">
+  		<div class="cookies" id="cookiesPopup">
+    
+    			<div id="modal_pic"></div><hr>
+    			<h5 id="modal_content"></h5><br>
+    
+
+    			<button type="button" class="btn btn-primary" id="modalbuton" style="width: 150px;"></button>
+		
+  		</div>
+	</div>
+</div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	
+	let content = document.getElementById('display');
+	
+	let text = document.getElementById("text");
+	let levels = document.getElementById('levels');
+	let life = document.getElementById('life');
+	let modal_pic=document.getElementById('modal_pic');
+	let level_val= 1;
+	let total_count =0;
+	let level = 3;
+	let lives = 3;
+	let score = 0;
+	var random_index = [];
+	var count = 0;
+	
+
+	var cs = new Audio("Correct.mp3");//sound when answer is correct
+	cs.load();
+	var ics = new Audio("incorrect.wav");//sound when answer is incorrect
+	ics.load();
+	var win = new Audio("win.wav");//sound when answer is incorrect
+	win.load();
+	var wrong = new Audio("wrong.wav");//sound when answer is incorrect
+	wrong.load();
+	var finished = new Audio("finished.wav");
+	finished.load();
+
+	const money_pic = ["1.png", "5.png", "10.png", "20.jpg", "50.jpg", "100.jpg", "200.jpg","500.jpg", "1000.jpg"];
+	const money_value = [1, 5, 10, 20, 50, 100, 200, 500, 1000];
+
+	 $("#display").fadeToggle(1000);
+	 generate();
+
+
+				// var startModal = new bootstrap.Modal(document.getElementById("startingModal"));
+				// startModal.show();
+
+
+	function generate(){
+
+	generateRandomMoney();
+
+	 for (var j = 0; j < lives; j++) {
+	             var img = document.createElement('img');
+	            img.src = 'heart.gif';
+	            img.setAttribute("class", "heart-image");
+	            img.style.width = 15 + "%";
+	            img.style.margin = 1 +"%";
+	            document.getElementById('life').appendChild(img);
+        	}
+
+	
+
+	}
+
+	function generateRandomMoney(){
+
+		random_index = [];
+	for (var i = 0; i < 4; i++) {
+		index =Math.floor((Math.random()*level));
+		random_index.push(index);
+		img = document.createElement("img");
+ 
+			img.src = money_pic[index];
+			img.style.width ="23%";
+			img.setAttribute("class", "money");
+
+			content.appendChild(img);
+
+
+	}
+
+	 $("#display").fadeToggle(1000);
+	}
+	
+	function submit() {
+		 $("#display").fadeToggle(1000);
+		let answer = document.getElementById('answer').value;
+		let counts =0;
+		for (var i = 0; i < random_index.length; i++) {
+			var temp = money_value[random_index[i]];
+			counts += temp;
+
+		}
+		count = counts;
+		if (answer == count) {
+
+			win.play();
+
+			
+			score++;
+			total_count += counts;
+			document.getElementById('score').innerText = score;
+			document.getElementById('score').style.width= score*20 + "%";
+			
+			if(score == 5 && level != 9){
+				
+
+				showNextLevel();
+				
+				
+			}
+
+			else if(score == 5 && level == 9){
+
+				finishedNa();
+			}
+
+			
+
+			for (var i = 0; i < random_index.length; i++) {
+					content.removeChild(content.lastChild);
+
+				}
+		}
+
+		else{
+
+			wrong.play();
+			incorrectAns();
+			
+			lives--;
+			life.removeChild(life.lastChild);
+
+			if(lives == 0){
+				showLoseModal();
+
+
+			}
+
+			
+
+			for (var i = 0; i < random_index.length; i++) {
+					content.removeChild(content.lastChild);
+
+				}
+		
+		}
+
+		answer = document.getElementById("answer").value="";
+
+		generateRandomMoney();
+	
+
+	}
+
+	function showNextLevel(){
+		cs.play();
+		score=0;
+
+		if (modal_pic.childElementCount != 0) {
+			modal_pic.removeChild(modal_pic.lastChild);
+		}
+
+		var img = document.createElement("img");
+				img.src = "cashier.png";
+				img.style.width ="50%";
+				modal_pic.appendChild(img);
+				document.getElementById("modalbuton").innerText="NEXT LEVEL";
+
+				document.getElementById("modal_content").innerHTML ="Perfect, we already got " + total_count + " pesos. Let's count more buddy.";
+				var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
+				myModal.show();
+
+				level+=1;
+				level_val +=1;
+
+				let next_level = level_val;
+				levels.innerText = "LEVEL "+ next_level ;
+				document.getElementById('score').innerText = score;
+				document.getElementById('score').style.width= 1 + "%";
+				
+
+	}
+
+	function showLoseModal(){
+
+		ics.play();
+		if (modal_pic.childElementCount != 0) {
+			modal_pic.removeChild(modal_pic.lastChild);
+		}
+
+		for (var i = 0; i < random_index.length; i++) {
+					content.removeChild(content.lastChild);
+
+				}
+
+			 level_val= 1;
+			total_count =0;
+			level = 3;
+			lives = 3;
+			score = 0;
+			random_index = [];
+			count = 0;
+
+				var img = document.createElement("img");
+				img.src = "close.gif";
+				img.style.width ="100%";
+				modal_pic.appendChild(img);
+				document.getElementById("modalbuton").innerText="PLAY AGAIN";
+
+
+				var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
+				myModal.show();
+
+				document.getElementById("modal_content").innerText= "Aww, you LOSE. We're closing the store.";
+
+
+
+				
+				
+				levels.innerText = "LEVEL "+ level_val;
+				document.getElementById('score').innerText = score;
+				document.getElementById('score').style.width= 1 + "%";
+
+				 for (var j = 0; j < lives; j++) {
+	            		 var img = document.createElement('img');
+	           		 img.src = 'heart.gif';
+	           		 img.setAttribute("class", "heart-image");
+	           		 img.style.width = 15 + "%";
+	           		 document.getElementById('life').appendChild(img);
+        		}
+
+			
+	}
+
+	  function finishedNa(){
+
+	  	finished.play();
+          	if (modal_pic.childElementCount != 0) {
+			modal_pic.removeChild(modal_pic.lastChild);
+		}
+
+		for (var i = 0; i < random_index.length; i++) {
+					content.removeChild(content.lastChild);
+
+				}
+
+				level_val= 1;
+				total_count =0;
+				level = 3;
+				lives = 3;
+				score = 0;
+				random_index = [];
+				count = 0;
+
+				var img = document.createElement("img");
+				img.src = "cashier.png";
+				img.style.width ="100%";
+				modal_pic.appendChild(img);
+				document.getElementById("modalbuton").innerText="PLAY AGAIN";
+
+
+				var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
+				myModal.show();
+
+				document.getElementById("modal_content").innerText= "CONGRATULATIONS, YOU COUNTED ALL THE MONEY";
+
+				
+				levels.innerText = "Antas "+ level_val;
+				document.getElementById('score').innerText = score;
+				document.getElementById('score').style.width= 1 + "%";
+
+				 for (var j = 0; j < lives; j++) {
+	            		 var img = document.createElement('img');
+	           		 img.src = 'heart.gif';
+	           		 img.setAttribute("class", "heart-image");
+	           		 img.style.width = 15 + "%";
+	           		 document.getElementById('life').appendChild(img);
+        		}
+
+
+    }
+
+
+
+ function incorrectAns(){
+
+        if (modal_pic.childElementCount != 0) {
+            modal_pic.removeChild(modal_pic.lastChild);
+        }
+                document.getElementById("modalbuton").innerText="Okay";
+
+                document.getElementById("modal_content").innerHTML ="WRONG, The correct answer is " + count;
+                var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
+                myModal.show();
+    }
+	
+
+
+</script>

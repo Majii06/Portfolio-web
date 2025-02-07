@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Subtracting Money</title>
+
+	<link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css"> 
+	<link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	 <script src="bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+	 <style type="text/css">
+	 	
+		.container
+		{
+			background-image: url("background1.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 655px;
+
+		}
+		body{
+			background-color: lightgreen;
+		}
+
+		.cloud{
+			background-image: url('cloud.gif'); 
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 210px;
+			
+		
+		}
+		#div{
+			background-image: url("board1.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 410px;
+			margin-top: 20px;
+			padding: 30px;
+			
+		}
+
+		.progress{
+			width: 250px;
+			height: 30px;
+			
+
+		}
+
+
+.button{
+  position:relative;
+  display:inline-block;
+  margin:20px;
+}
+
+.button a{
+  color:white;
+  font-family:Helvetica, sans-serif;
+  font-weight:bold;
+  font-size:36px;
+  text-align: center;
+  text-decoration:none;
+  background-color:#FFA12B;
+  display:block;
+  position:relative;
+  padding:20px 40px;
+  
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+  
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+  box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+  
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 100px;
+}
+
+.button a:active{
+  top:10px;
+  background-color:#F78900;
+    border-radius: 100px;
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #915100;
+  box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+}
+
+.button:after{
+  content:"";
+  height:100%;
+  width:100%;
+  padding:4px;
+  position: absolute;
+  border-radius: 100px;
+  bottom:-15px;
+  left:-4px;
+  z-index:-1;
+  background-color:#2B1800;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+		input{
+			height: 80px;
+			border-radius: 100px;
+			font-family: cursive;
+			padding: 3px;
+			text-align: center;
+		}
+
+body {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cookiesContent {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightyellow;
+  color: #000;
+  text-align: center;
+  border-radius: 20px;
+  padding: 30px 30px 70px;
+}
+
+.cookies {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightyellow;
+  color: #000;
+  text-align: center;
+  border-radius: 20px;
+  padding: 30px 30px 70px;
+}
+  button.close {
+    width: 30px;
+    font-size: 20px;
+    color: #c0c5cb;
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+  button.accept {
+    background-color: #ed6755;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    padding: 14px;
+    font-size: 16px;
+    color: white;
+    box-shadow: 0px 6px 18px -5px rgba(237, 103, 85, 1);
+  }
+}
+
+		
+	 </style>
+</head>
+<body>
+
+<div class="container"><br>
+			
+			<audio src="Ariana_Grande_-_7_rings.mp3" autoplay="autoplay" loop="loop"></audio>
+			<div class="container-fluid">
+				
+		<div class="row">
+			<div class="col-sm-3">
+				<h4 id="levels" style="font-family: cursive; font-style: bold; float: left">Level 1</h4>
+				<div class="progress">
+  						<div class="progress-bar bg-warning progress-bar-striped active" role="progressbar"  aria-valuemin="0" aria-valuemax="100" id="score" style="width: 1%">
+  						</div>
+					</div>
+
+				<div id="life">
+				</div>
+				<div class="cloud">
+					<h5 style="padding-top: 70px;text-align: center;" id="text">Let's go.</h5>
+				</div>
+				<img src="girl.gif" style="width: 100%"><br><br>
+				
+				
+					
+			</div>
+			<div class="col-sm" id="div" >
+					
+
+				<div style="height: 400px; text-align: center; color: white" id="display" class="row">
+					
+					<div class="col-sm" id="payment_content">
+						<h5><u>Cash Payment</u></h5>
+						<h3 id="cash" style="padding-bottom: 60px" ></h3>
+					</div>
+					<div class="col-sm"><br>
+						<h1>-</h1>
+						<img src="minus.png" width="130" style="margin-top: 30%">
+					</div>
+					
+					<div class="col-sm" id="total_content">
+						<h5><u>Total Payment</u></h5>
+						<h3 id="payment"></h3>        
+						
+					</div>
+					
+					
+				</div>
+				<div><center><label style="font-size: 30px">CHANGE: </label>
+					<input type="number" id="answer" style="font-size: 20px">
+					<!-- <button onclick="submit()"> ENTER </button> -->
+					  <div class="button" onclick="submit()">
+  							  <a href=#>Enter</a>
+  						</div>
+					</center>
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<!-- Starting Modal -->
+<!-- <div class="modal fade" id="startingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  
+  <div class="container-fluid">
+  		<div class="cookiesContent" id="cookiesPopup">
+    
+    			<div>
+    				<br>
+    						<h4>"Hello, can you help me to compute <br>the change? I need to compute and give the<br> change, and unfortunately the machine is broken"</h4><br>
+    				
+    						<img src="girl.gif" width="200"><br><br>
+    				
+    			</div>
+    			
+    
+
+    			<button type="button" class="btn btn-warning" style="width: 200px; height: 60px;"><h4>START</h4></button>
+		
+  		</div>
+	</div>
+</div>
+</div> -->
+
+	<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  
+  <div class="container-fluid">
+  		<div class="cookies" id="cookiesPopup">
+    		<div id="modal_pic"></div><hr>
+    			<h5 id="modal_content"></h5><br>
+    
+
+    			<button type="button" class="btn btn-primary" id="modalbuton" style="width: 120px;"></button>
+		
+  		</div>
+	</div>
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+	
+	let payment_content = document.getElementById('payment_content');
+	let total_content = document.getElementById('total_content');
+	let levels = document.getElementById('levels');
+	let life = document.getElementById('life');
+	let text = document.getElementById("text");
+	let level_val= 1;
+	let level = 3;
+	let lives = 3;
+	let score = 0;
+	var random_index = [];
+	var random_val = 0;
+	let temp_payment =0;
+	let payment =0;
+	var cs = new Audio("Correct.mp3");//sound when answer is correct
+	cs.load();
+var ics = new Audio("incorrect.wav");//sound when answer is incorrect
+	ics.load();
+var win = new Audio("win.wav");//sound when answer is incorrect
+	win.load();
+var wrong = new Audio("wrong.wav");//sound when answer is incorrect
+	wrong.load();
+
+	const money_pic = ["1.png", "5.png", "10.png", "20.jpg", "50.jpg", "100.jpg", "200.jpg","500.jpg", "1000.jpg"];
+	const money_value = [1, 5, 10, 20, 50, 100, 200, 500, 1000];
+	const payment_array = [100, 200, 500, 1000];
+
+	// var startModal = new bootstrap.Modal(document.getElementById("startingModal"));
+	// 			startModal.show();
+	generate();
+
+	function generate(){
+
+		generateAllMoney();
+	
+
+	 for (var j = 0; j < lives; j++) {
+	             var img = document.createElement('img');
+	            img.src = 'heart.gif';
+	            img.setAttribute("class", "heart-image");
+	            img.style.width = 20 + "%";
+	            document.getElementById('life').appendChild(img);
+        	}
+
+
+	
+	}
+	
+
+	function generateAllMoney(){
+		temp_payment = Math.floor(Math.random() * payment_array.length);
+	 payment = payment_array[temp_payment];
+
+	var img = document.createElement("img");
+ 	img.src =money_pic[temp_payment+5];
+	img.style.width ="80%";
+	payment_content.appendChild(img);
+
+
+	do{
+		random_index = [];
+		random_val =0;
+		for (var i = 0; i < 3; i++) {
+			var index =Math.floor((Math.random()*level) +1);
+			random_index.push(index);
+			random_val += money_value[index];
+		}
+		
+	}while(payment <= random_val);
+	
+	for (var i = 0; i < random_index.length; i++) {
+		
+		var img = document.createElement("img");
+ 		var pic_name = random_index[i];
+			img.src = money_pic[pic_name];
+			img.style.width ="50%";
+			img.style.margin ="2px";
+			// img.style.width ="25%"
+			total_content.appendChild(img);
+		}
+	
+		document.getElementById('cash').innerHTML =payment;
+		document.getElementById('payment').innerHTML =random_val;
+	}
+	function submit() {
+
+
+
+		let answer = document.getElementById('answer').value;
+		var count = 0;
+
+		count = payment - random_val;
+	
+		if (answer == count) {	
+			
+			win.play();
+			score++;
+			document.getElementById('score').innerText = score;
+			document.getElementById('score').style.width= score*20 + "%";
+
+			if(score == 5){
+				level+=1;
+				score=0;
+				let next_level = level_val +1;
+				levels.innerText = "Level "+ next_level ;
+				text.innerText = "LEVEL" + next_level + "! Good luck.";
+
+				showNextLevel();
+			
+				document.getElementById('score').innerText = score;
+				document.getElementById('score').style.width= 1 + "%";
+			}
+
+			
+
+			for (var i = 0; i < random_index.length; i++) {
+					total_content.removeChild(total_content.lastChild);
+
+				}
+			payment_content.removeChild(payment_content.lastChild);
+			console.log(score);
+		}
+
+		else{
+			wrong.play();
+
+			text.innerText = "Oh, you are wrong. The correct change is " + count;
+			lives--;
+			life.removeChild(life.lastChild);
+
+
+			for (var i = 0; i < random_index.length; i++) {
+					total_content.removeChild(total_content.lastChild);
+
+				}
+
+			payment_content.removeChild(payment_content.lastChild);
+
+			if (lives == 0) {
+				
+				showLoseModal();
+
+			}
+		}
+
+		answer = document.getElementById("answer").value="";
+
+		generateAllMoney();
+
+	}
+
+	function showNextLevel(){
+		cs.play();
+
+		if (modal_pic.childElementCount != 0) {
+			modal_pic.removeChild(modal_pic.lastChild);
+		}
+
+		var img = document.createElement("img");
+				img.src = "girl.gif";
+				img.style.width ="50%";
+				modal_pic.appendChild(img);
+				document.getElementById("modalbuton").innerText="Next Level";
+
+				document.getElementById("modal_content").innerHTML ="Congratulations! Let's go to the next Level ";
+				var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
+				myModal.show();
+	}
+
+	function showLoseModal(){
+
+		ics.play();
+		if (modal_pic.childElementCount != 0) {
+			modal_pic.removeChild(modal_pic.lastChild);
+		}
+
+
+		var img = document.createElement("img");
+				img.src = "close.gif";
+				img.style.width ="100%";
+				modal_pic.appendChild(img);
+				document.getElementById("modalbuton").innerText="Play agin";
+
+
+				var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
+				myModal.show();
+
+				document.getElementById("modal_content").innerText= "Aww, you lose. The store will be temporarily closed.";
+
+				text.innerHTML= "Hi, help me to compute the change of customer.";
+				level_val= 1;
+				level = 3;
+				lives = 3;
+				score = 0;
+				levels.innerText = "Level "+ level_val;
+				document.getElementById('score').innerText = score;
+				document.getElementById('score').style.width= 1 + "%";
+
+				 for (var j = 0; j < lives; j++) {
+	            		 var img = document.createElement('img');
+	           		 img.src = 'heart.gif';
+	           		 img.setAttribute("class", "heart-image");
+	           		 img.style.width = 20 + "%";
+	           		 document.getElementById('life').appendChild(img);
+        		}
+	}
+
+	
+
+
+</script>
+</body>
+</html> 

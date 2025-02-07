@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" >
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Majhoy</title>
+
+<script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <style>
+     .animatable {
+    visibility: hidden;
+    animation-play-state: paused;
+}
+  
+  @keyframes moveUp {
+  0% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.animated.moveUp {
+  animation-name: moveUp;
+}
+  .animated.fadeInDown {
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    .animated {
+  visibility: visible;
+  animation-fill-mode: both;
+  animation-duration: 2s;
+  animation-play-state: running;
+}
+    
+    </style>
+
+</head>
+
+
+<body id="top">
+
+    
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <!-- page wrap
+    ================================================== -->
+    <div id="page" class="s-pagewrap">
+
+
+        <!-- # site header 
+        ================================================== -->
+        <header class="s-header">
+            <div class="row s-header__inner">
+
+                <div class="s-header__block">
+                    <div class="s-header__logo">
+                        <a style="color:white; font-family:monospace;" href="index.html">
+                            MAJHOY.
+                        </a>
+                    </div>
+
+                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+                </div> <!-- end s-header__block -->
+
+                <nav class="s-header__nav">    
+                    <ul class="s-header__menu-links">
+                        <li class="current"><a class="smoothscroll" href="#intro">Intro</a></li>
+                        <li><a class="smoothscroll" href="#about">About</a></li>
+                        <li><a class="smoothscroll" href="#works">Works</a></li>
+                        <li><a class="smoothscroll" href="#footer">Contact</a></li>
+                    </ul> <!-- s-header__menu-links -->    
+                </nav> <!-- end s-header__nav -->
+
+            </div> <!-- end s-header__inner -->
+        </header> <!-- end s-header -->
+
+
+        <!-- # intro
+        ================================================== -->
+        <section id="intro" class="s-intro target-section">
+
+            <div class="row s-intro__content width-sixteen-col">
+                <div class="column lg-12 s-intro__content-inner grid-block grid-16">
+                    
+                    <div class="s-intro__content-text">
+
+                        <div class="s-intro__content-pretitle text-pretitle">Hello, I'm</div>
+                        <h1 class="s-intro__content-title">
+                         Marry Joy Valera <br>
+                        
+                        
+                        </h1>                            
+
+                        <div class="s-intro__content-btns">
+                            <a class="smoothscroll btn" href="#about">More About Me</a>
+                            <a class="smoothscroll btn btn--stroke" href="#footer">Get In Touch</a>
+                        </div> <!-- s-intro__content-btns -->   
+
+                    </div> <!-- s-intro__content-text -->                     
+                    
+                </div> <!-- s-intro__content-inner -->  
+            </div> <!-- s-intro__content -->
+
+           
+
+            <div class="s-intro__content-media">                               
+                <img src="images/juy1.jpg" srcset="images/juy1.jpg 1x, images/juy1.jpg 2x" alt="">
+            </div> <!-- s-intro__content-media -->                
+
+            
+            <div class="s-intro__scroll-down">
+                <a href="#about" class="smoothscroll">
+                    <div class="scroll-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
+                    </div>
+                    <span class="scroll-text u-screen-reader-text">Scroll Down</span>
+                </a>
+            </div> <!-- s-intro__scroll-down -->
+
+        </section> <!-- end s-intro -->
+
+
+        <!-- # about
+        ================================================== -->
+        <section id="about" class="s-about target-section">
+
+            <div class="row s-about__content">
+                <div class="column xl-12">    
+                        <h2 class="text-display-title">About Me.</h2><hr>
+                 
+
+                    <p class="attention-getter" style="text-align: justify; text-indent: 7%;">
+                        A results-driven customer service expert with a proven history of addressing intricate challenges and surpassing client expectations, currently looking to shift into the IT sector to utilize outstanding communication, problem-solving, and analytical abilities to provide technical solutions and client satisfaction in a dynamic technology setting. Extremely driven and flexible issue solver who is passionate about technology and has a strong desire to learn. </p>
+
+                    <p class="attention-getter" style="text-align: justify; text-indent: 7%;">
+                    I am approachable, dependable, and always on time, possessing excellent communication abilities and a creative approach. I collaborate effectively with others or can work alone, focusing on setting and reaching objectives. I am well-organized, efficiently manage my time, and thrive when faced with new challenges.</p>
+                    <div class="grid-list-items s-about__blocks">
+
+                        <div class="grid-list-items__item s-about__block">
+                            <h4 class="s-about__block-title">Experience</h4>
+                            <ul class="s-about__list">
+                                <li>
+                                    Sagility
+                                    <span>Customer Service Representative</span>
+                                </li>
+                               
+                                
+                            </ul>
+                        </div> <!--end s-about__block -->
+
+                        <div class="grid-list-items__item s-about__block">
+                            <h4 class="s-about__block-title">Awards</h4>
+
+                            <ul class="s-about__list">
+                                <li>
+                                    <a href="#0">
+                                        Best in Capstone Project
+                                        <span>PNC - June 2022</span>
+                                    </a>                                        
+                                </li>
+                                <li>
+                                    <a href="#0">
+                                        Best in PCS
+                                        <span>Jan 2023</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#0">
+                                        Best in NPS
+                                        <span>Jan 2023</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#0">
+                                        Best Assesment Scores at 100%
+                                        <span>May 2023</span>
+                                    </a>
+                                </li><li>
+                                    <a href="#0">
+                                        Best in ATR
+                                        <span>May 2023</span>
+                                    </a>                                        
+                                </li>
+                            </ul>
+                        </div> <!--end s-about__block -->
+                        
+                        <div class="grid-list-items__item s-about__block">
+                            <h4 class="s-about__block-title">Skills</h4>
+
+                            <ul class="s-about__list">
+                                <li>
+                                    JavaScript
+                                </li>
+                                <li>
+                                    HTML
+                                </li>
+                                <li>
+                                    SQL
+                                </li>
+                                <li>
+                                    CSS
+                                </li>
+                                <li>
+                                    JQuery
+                                </li>
+                                <li>
+                                    Adaptability
+                                </li>
+                                <li>
+                                    Communication
+                                </li>
+                                <li>
+                                    Problem Solving
+                                </li>
+                            </ul>
+                        </div> <!--end s-about__block -->
+
+                    </div> <!-- grid-list-items -->
+
+                </div> <!--end column -->
+            </div> <!--end s-about__content -->
+            
+        </section> <!-- end s-about -->   
+
+
+
+        <!-- # works
+        ================================================== -->
+        <section id="works" class="s-works target-section animatable moveUp">
+
+            <div class="row">
+                <div class="column xl-12">
+                   
+                        <h2 class="text-display-title">Selected Works.</h2><hr>
+                  
+                </div>
+            </div>
+
+            <div class="row folio-entries">
+
+                <div class="column entry" style="margin-top: -5%;">
+                    <a href="games.html" class="entry__link">
+                       <h4 style="color: gray;">Educational Math Games</h4></center>
+                        <div class="entry__thumb">
+                            <img src="images/games.png" srcset="images/games.png 1x, images/games.png 2x" alt="">
+                        </div>
+                         
+                        <div class="entry__info">
+                            <h4 class="entry__title">Random Games</h4>
+                            <div class="entry__cat">"click" to play</div>
+                        </div>
+                    </a>
+
+                <p style= "margin: 2%; color: gray; text-align: justify; text-indent: 10%;"> Provide hands-on opportunity for players to improve academic performance in math while having fun with it. Created with HTML, CSS, JAVASCRIPT and JQUERY.</p>
+                </div> <!-- entry -->
+
+                <div class="column entry" style="margin-top: -5%;">
+                    <a href="websites.html" class="entry__link">
+                         <h4 style=" color: gray;">Land Pages</h4></center>
+                        <div class="entry__thumb">
+                            <img src="images/websites.png" srcset="images/websites.png 1x, images/websites.png 2x" alt="">
+                        </div>
+                      
+                        <div class="entry__info">
+                            <h4 class="entry__title">Land Pages</h4>
+                            <div class="entry__cat">Let's check</div>
+                        </div>
+                    </a>
+
+                       <p style= "margin: 2%; color: gray; text-align: justify;text-indent: 10%; "> Design and developed a sample landing page for marketing of pastry products and a page promoting animal rescue. Created with HTML, CSS, JAVASCRIPT and JQUERY. </p>
+                 <!-- entry -->
+
+                </div> <!-- entry --> 
+
+            </div> <!-- folio entries -->
+
+
+        </section> <!-- end s-works --> 
+        <br> <br>
+
+        <!-- # numbers
+        ================================================== -->
+        
+        <!-- # footer 
+        ================================================== -->
+        <footer id="footer" class="s-footer target-section">
+
+            <div class="row">
+                <div class="column lg-12">
+                   
+                        <h2 class="text-display-title" style="color: white">Get In Touch.</h2><hr>
+                    
+                </div>
+            </div>
+
+            <div class="row s-footer__content">
+
+                <div class="column xl-6 md-12 s-footer__block s-footer__about">                    
+                    <p class="attention-getter" style="text-align: justify; text-indent: 10%;">
+                    I'm excited to explore how my skills and experiences could contribute to your team's continued success,
+                        I look forward to the possibility of further discussion.
+                    </p>               
+                </div> <!-- end section-footer__about -->
+
+                <div class="column xl-6 md-12 s-footer__block s-footer__site-links">
+                    <div class="row">
+                        
+                        <div class="column xl-6 md-6 tab-12">
+                            <h5>Contact Me</h5>
+                            <ul class="link-list">
+                                <li><a href="mailto:#0">valeramarryjoy@gmail.com</a></li>
+                                <li><a href="tel:+1975432345">+639389924167</a></li>
+                                <li><a href="tel:+1975432345">+639913450169</a></li>
+                            </ul> 
+                        </div>
+                    </div>                    
+                </div> <!-- end section-footer__site-links -->
+
+            </div> <!-- end section-footer__content -->
+
+
+            <div class="row s-footer__buttons">
+               
+                
+          
+                <div class="column xl-6 tab-12">                    
+                    <a href="resume/Valera, Marry Joy M. Resume.pdf" class="btn btn--stroke btn--large u-fullwidth" download>Get My CV</a>
+                </div>
+            
+            </div> <!-- end section-footer__buttons -->              
+            
+           
+
+                
+
+            </div> <!-- end section-footer__bottom -->          
+
+            <div class="ss-go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top">                 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"></path></svg>
+                </a>                                
+                <span>Back To Top</span>   
+            </div> <!-- end ss-go-top -->
+            
+        </footer> <!-- end s-footer -->
+
+    </div> <!-- end page-wrap -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+<script>
+jQuery(function($) {
+  
+  // Function which adds the 'animated' class to any '.animatable' in view
+  var doAnimations = function() {
+    
+    // Calc current offset and get all animatables
+    var offset = $(window).scrollTop() + $(window).height(),
+        $animatables = $('.animatable');
+    
+    // Unbind scroll handler if we have no animatables
+    if ($animatables.length == 0) {
+      $(window).off('scroll', doAnimations);
+    }
+    
+    // Check all animatables and animate them if necessary
+    $animatables.each(function(i) {
+       var $animatable = $(this);
+      if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+        $animatable.removeClass('animatable').addClass('animated');
+      }
+    });
+
+  };
+  
+  // Hook doAnimations on scroll, and trigger a scroll
+  $(window).on('scroll', doAnimations);
+  $(window).trigger('scroll');
+
+});
+</script>
+
+</body>
+</html>
